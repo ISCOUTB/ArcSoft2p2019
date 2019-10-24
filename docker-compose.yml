@@ -1,0 +1,31 @@
+version: '3.2'
+
+services:
+  twitter:
+    build: ./twitter
+    ports:
+      - 8081:80
+  facebook:
+    build: ./facebook
+    ports:
+      - 8082:80
+  youtube:
+    build: ./youtube
+    ports:
+      - 8083:80
+  instagram:
+    build: ./instagram
+    ports:
+      - 8084:80
+  reddit:
+    build: ./reddit
+    ports:
+      - 8085:80
+  middleware:
+    build: ./middleware
+    ports:
+      - 8080:80
+  dashboard:
+    build: ./dashboard
+    ports:
+      - 80:80
