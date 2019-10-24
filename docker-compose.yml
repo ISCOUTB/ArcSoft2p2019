@@ -12,7 +12,7 @@ services:
   youtube:
     build: ./youtube
     volumes: 
-      ./api:/api
+      - ./api:/api
     ports:
       - 8083:80
   instagram:
