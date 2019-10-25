@@ -1,33 +1,40 @@
-version: '3.2'
+version: '3.7'
 
 services:
   twitter:
     build: ./twitter
+    restart: always
     ports:
       - 8081:80
   facebook:
     build: ./facebook
+    restart: always
     ports:
       - 8082:80
   youtube:
     build: ./youtube
-    volumes: 
-      - ./api:/api
+    restart: always
+    environment:
+      - RAILS_ENV=production
     ports:
       - 8083:80
   instagram:
     build: ./instagram
+    restart: always
     ports:
       - 8084:80
   reddit:
     build: ./reddit
+    restart: always
     ports:
       - 8085:80
   middleware:
     build: ./middleware
+    restart: always
     ports:
       - 8080:80
   dashboard:
     build: ./dashboard
+    restart: always
     ports:
       - 80:80
