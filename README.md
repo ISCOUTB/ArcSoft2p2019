@@ -3,9 +3,15 @@ Dashboard platform is where you could carry out the information monitoring of yo
 
 ### RUN
 ```sh
+Ubuntu
 $ sudo wget https://raw.githubusercontent.com/IngenieriaDeSistemasUTB/ArcSoft2p2019/master/dashboard/Dockerfile
+Mac
+$ curl -O https://raw.githubusercontent.com/IngenieriaDeSistemasUTB/ArcSoft2p2019/master/dashboard/Dockerfile
+----------------------------------------------------------------------------------------------------------------
 $ sudo docker build -t <Image Name> <Dockerfile Address>
+----------------------------------------------------------------------------------------------------------------
 $ sudo docker run -it <Image Name> ionic serve --external --address=0.0.0.0
+----------------------------------------------------------------------------------------------------------------
 ? Install @angular/cli? (Y/n) " we add Y|y "
 ```
 ### TEST
