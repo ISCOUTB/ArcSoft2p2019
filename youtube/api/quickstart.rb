@@ -52,38 +52,53 @@ service.authorization = authorize
 
 # Sample ruby code for channels.list
 
-def channels_list_by_username(service, part, **params)
+def channels_list_by_username(service, part, opcion, **params)
   response = service.list_channels(part, params).to_json
   item = JSON.parse(response).fetch("items")[0]
-
-  puts ("El ID del canal es  #{item.fetch("id")}. " +
-        "El titulo es '#{item.fetch("snippet").fetch("title")}'" +
-        "El numero de subscriptores es #{item.fetch("statistics").fetch("subscriberCount")}."+
-        " y tiene #{item.fetch("statistics").fetch("videoCount")} videos.")
+  string = {
+    'id'=> "#{item.fetch("id")}",
+    'username'=> "#{item.fetch("snippet").fetch("title")}",
+    'fullname'=> "#{item.fetch("snippet").fetch("title")}",
+    'followers'=> "#{item.fetch("statistics").fetch("subscriberCount")}".to_i,
+    'post'=> "#{item.fetch("statistics").fetch("videoCount")}".to_i,
+    }
+  json=JSON[string]
+  if opcion == 0
+    puts (json)
+    return json  
+  else
+    return string = {'id' =>"#{item.fetch("id")}", 'followers'=> "#{item.fetch("statistics").fetch("subscriberCount")}".to_i}
+  end
 end
 
-channels_list_by_username(service, 'snippet,contentDetails,statistics', id: 'UCbWrg-Mc8PDmmVPZNwuX4ZQ')
+channels_list_by_username(service, 'snippet,contentDetails,statistics', 0, for_username: 'GoogleDevelopers')
 
 def videoinfo(service, part, **params)
   response = service.list_videos(part, params).to_json
   item = JSON.parse(response).fetch("items")[0]
-  puts ("El ID del video es #{item.fetch("id")}"+
-        "El numero de likes es #{item.fetch("statistics").fetch("likeCount")}"+
-        "El numero de comentarios es #{item.fetch("statistics").fetch("commentCount")}"
-        )
+  string = {
+    'id'=> "#{item.fetch("id")}",
+    'likes'=> "#{item.fetch("statistics").fetch("likeCount")}".to_i,
+  }
+  return string
 end
 
 def videolist(service, part, **params)
   response = service.list_activities(part, params).to_json
-  puts(response)
-  x=[0,1,2,3,4]
-  videoIds=Array.new(5)
+  x = [*0..(params.fetch(:max_results).to_i)-1]
+  videoIds = Array.new((params.fetch(:max_results).to_i))
+  channel_info = channels_list_by_username(service, 'snippet,contentDetails,statistics', 1, id: params.fetch(:channel_id))
+  string = Hash.new
   for i in x do
     item = JSON.parse(response).fetch("items")[i]
     videoIds[i]= (item.fetch("contentDetails").fetch("upload").fetch("videoId")).to_s
-    puts(videoIds[i])
-    videoinfo(service, "statistics", id: videoIds[i])
+    video_info = videoinfo(service, "statistics", id: videoIds[i])
+    video_info['efficiency'] = (video_info.fetch('likes').to_f/channel_info.fetch('followers').to_f)*100
+    video_info['user'] = video_info.fetch('id')
+    string[(i+1).to_s]=video_info
   end
+  puts (string)
+  return string
 end
 
-videolist(service, 'contentDetails', channel_id:'UCbWrg-Mc8PDmmVPZNwuX4ZQ', max_results:'5')
+videolist(service, 'contentDetails', channel_id:'UC_x5XG1OV2P6uZZ5FSM9Ttw', max_results:'5')
