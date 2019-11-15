@@ -1,26 +1,28 @@
-## Tweepy
-Tweepy es un paquete de Python de código abierto que le brinda una forma muy conveniente de acceder a la API de Twitter con Python. Tweepy incluye un conjunto de clases y métodos que representan los modelos de la API de Twitter, y maneja de manera transparente varios detalles de implementación.
+# Twitter
 
-Para instalar Tweepy utilizamos el siguiente comando:
+## Tweepy
+[Tweepy](http://docs.tweepy.org/en/latest/) is an open source Python package that gives you a very convenient way to access the Twitter API with Python. Tweepy includes a set of classes and methods that represent the Twitter API models, and transparently handles various implementation details.
+
+To install Tweepy we use the following command:
 
 ```
 pip3 install tweepy
 ```
 
-## Crear credenciales de autenticación
-La API de Twitter requiere que todas las solicitudes usen OAuth para autenticarse, por lo tanto, se deben crear las credenciales de autenticación necesarias para poder utilizar la API.
+### Create authentication credentials
+The Twitter API requires that all requests use OAuth to authenticate, therefore, the authentication credentials necessary to use the API must be created.
 
-Si ya contamos con una cuenta de Twitter vamos al sitio de [desarrolladores de Twitter](https://developer.twitter.com/) y seguimos todos los pasos para obtener nuestra cuenta de desarrollador.
+If we already have a Twitter account we go to the site of [Twitter developers](https://developer.twitter.com/) and follow all the steps to obtain our developer account.
 
 <img src="https://i.ibb.co/1XrhkZH/twitterdev.png">
 
-Ya que Twitter otorga credenciales de autenticación a aplicaciones, no a cuentas, debemos registrar la aplicación para poder realizar llamadas a la API. Para registrar la aplicación, vamos al sitio de [aplicaciones de Twitter](https://developer.twitter.com/en/apps) y seleccionamos la opción Crear una aplicación.
+Since Twitter grants authentication credentials to applications, not accounts, we must register the application in order to make calls to the API. To register the application, we go to the [Twitter applications site](https://developer.twitter.com/en/apps) and select the option Create an application.
 
-Seguimos los pasos y una vez creada la aplicación vamos a detalles para poder generar las credenciales.
+We follow the steps and once created the application we will go to details to be able to generate the credentials.
 
 <img src="https://i.ibb.co/0m7BJdY/Captura-de-Pantalla-2019-10-09-a-la-s-5-49-17-p-m.png">
 
-En la pestaña Keys and tokens generamos las credenciales que necesitamos:
+In the Keys and tokens tab we generate the credentials we need:
 
 * Consumer key
 * Consumer secret
@@ -28,3 +30,16 @@ En la pestaña Keys and tokens generamos las credenciales que necesitamos:
 * Access secret
 
 <img src="https://i.ibb.co/0Msw8xh/Captura-de-Pantalla-2019-10-09-a-la-s-5-52-30-p-m.png">
+
+> Note: It is advisable to add credentials to a "twitter_credentials.json" file instead of including them directly in your code, this file should not be uploaded to the repository.
+
+## Flask
+[Flask](http://flask.palletsprojects.com/en/1.1.x/) is a minimalist framework written in Python that allows you to create web applications quickly and with a minimum number of lines of code.
+
+To install Flask we use the following command:
+
+```
+pip3 install flask
+```
+
+> To see the API structure in more detail, look at the [API documentation](https://ingenieriadesistemasutb.github.io/ArcSoft2p2019/).
