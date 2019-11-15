@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Api</title>
+  <title>Api Documentation</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta charset="UTF-8" />
@@ -689,17 +689,57 @@
   <script>
     // Script section to load models into a JS Var
     var defs = {}
-            defs.Post = {
+            defs.ApiResponse = {
+  "type" : "object",
+  "properties" : {
+    "code" : {
+      "type" : "integer",
+      "format" : "int32",
+      "example" : 404
+    },
+    "message" : {
+      "type" : "string",
+      "example" : "User not found"
+    }
+  }
+};
+            defs.Posts = {
+  "type" : "array",
+  "example" : [ {
+    "id" : 1050118621198921700,
+    "likes" : 1,
+    "efficiency" : 3.7,
+    "user" : 959874859374465000
+  }, {
+    "id" : 1050118621198921700,
+    "likes" : 1,
+    "efficiency" : 3.7,
+    "user" : 959874859374465000
+  }, {
+    "id" : 1050118621198921700,
+    "likes" : 1,
+    "efficiency" : 3.7,
+    "user" : 959874859374465000
+  }, {
+    "id" : 1050118621198921700,
+    "likes" : 1,
+    "efficiency" : 3.7,
+    "user" : 959874859374465000
+  } ],
+  "items" : {
+    "$ref" : "#/components/schemas/Posts_inner"
+  }
+};
+            defs.Posts_inner = {
+  "type" : "object",
   "properties" : {
     "id" : {
       "type" : "integer",
-      "description" : "The integer representation of the unique identifier for this",
-      "example" : 1050118621198921700
+      "description" : "The integer representation of the unique identifier for this"
     },
     "likes" : {
       "type" : "integer",
-      "description" : "Indicates approximately how many times this post has been liked by\n users",
-      "example" : 40
+      "description" : "Indicates approximately how many times this post has been liked by\n users"
     },
     "efficiency" : {
       "type" : "number",
@@ -709,8 +749,7 @@
     "user" : {
       "type" : "integer",
       "description" : "The user id who made the post.",
-      "format" : "uuid",
-      "example" : 959874859374465000
+      "format" : "uuid"
     }
   }
 };
@@ -741,7 +780,7 @@
     "post" : {
       "type" : "integer",
       "description" : "The number of post issued by the user",
-      "example" : 570
+      "example" : 230
     }
   }
 };
@@ -761,9 +800,9 @@
             -->
             <li class="nav-fixed nav-header active" data-group="_"><a href="#api-_">API Summary</a></li>
 
-                  <li class="nav-header" data-group="Post"><a href="#api-Post">API Methods - Post</a></li>
-                    <li data-group="Post" data-name="getPostsByNumber" class="">
-                      <a href="#api-Post-getPostsByNumber">getPostsByNumber</a>
+                  <li class="nav-header" data-group="Posts"><a href="#api-Posts">API Methods - Posts</a></li>
+                    <li data-group="Posts" data-name="getPostsByNumber" class="">
+                      <a href="#api-Posts-getPostsByNumber">getPostsByNumber</a>
                     </li>
                   <li class="nav-header" data-group="User"><a href="#api-User">API Methods - User</a></li>
                     <li data-group="User" data-name="getUserByUsername" class="">
@@ -775,7 +814,7 @@
       <div id="content">
         <div id="project">
           <div class="pull-left">
-            <h1>Api</h1>
+            <h1>Api Documentation</h1>
           </div>
           <div class="clearfix"></div>
         </div>
@@ -788,10 +827,10 @@
           </div>
         </div>
         <div id="sections">
-                <section id="api-Post">
-                  <h1>Post</h1>
-                    <div id="api-Post-getPostsByNumber">
-                      <article id="api-Post-getPostsByNumber-0" data-group="User" data-name="getPostsByNumber" data-version="0">
+                <section id="api-Posts">
+                  <h1>Posts</h1>
+                    <div id="api-Posts-getPostsByNumber">
+                      <article id="api-Posts-getPostsByNumber-0" data-group="User" data-name="getPostsByNumber" data-version="0">
                         <div class="pull-left">
                           <h1>getPostsByNumber</h1>
                           <p>Get a number of posts per user</p>
@@ -802,84 +841,84 @@
                         <p class="marked"></p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/post/{number}</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/posts/{number}</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Post-getPostsByNumber-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Post-getPostsByNumber-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Post-getPostsByNumber-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Post-getPostsByNumber-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Post-getPostsByNumber-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Post-getPostsByNumber-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Post-getPostsByNumber-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Post-getPostsByNumber-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Post-getPostsByNumber-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Post-getPostsByNumber-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Post-getPostsByNumber-0-python">Python</a></li>
+                          <li class="active"><a href="#examples-Posts-getPostsByNumber-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Posts-getPostsByNumber-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Posts-getPostsByNumber-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Posts-getPostsByNumber-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Posts-getPostsByNumber-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Posts-getPostsByNumber-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Posts-getPostsByNumber-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Posts-getPostsByNumber-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Posts-getPostsByNumber-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Posts-getPostsByNumber-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Posts-getPostsByNumber-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Post-getPostsByNumber-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://virtserver.swaggerhub.com/DevOps/Api/post/{number}"</code></pre>
+                          <div class="tab-pane active" id="examples-Posts-getPostsByNumber-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://virtserver.swaggerhub.com/DevOps/Api/posts/{number}"</code></pre>
                           </div>
-                          <div class="tab-pane" id="examples-Post-getPostsByNumber-0-java">
+                          <div class="tab-pane" id="examples-Posts-getPostsByNumber-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
 import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
-import io.swagger.client.api.PostApi;
+import io.swagger.client.api.PostsApi;
 
 import java.io.File;
 import java.util.*;
 
-public class PostApiExample {
+public class PostsApiExample {
 
     public static void main(String[] args) {
         
-        PostApi apiInstance = new PostApi();
+        PostsApi apiInstance = new PostsApi();
         Integer number = 56; // Integer | 
         try {
-            Post result = apiInstance.getPostsByNumber(number);
+            Posts result = apiInstance.getPostsByNumber(number);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling PostApi#getPostsByNumber");
+            System.err.println("Exception when calling PostsApi#getPostsByNumber");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
 
-                          <div class="tab-pane" id="examples-Post-getPostsByNumber-0-android">
-                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.PostApi;
+                          <div class="tab-pane" id="examples-Posts-getPostsByNumber-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.PostsApi;
 
-public class PostApiExample {
+public class PostsApiExample {
 
     public static void main(String[] args) {
-        PostApi apiInstance = new PostApi();
+        PostsApi apiInstance = new PostsApi();
         Integer number = 56; // Integer | 
         try {
-            Post result = apiInstance.getPostsByNumber(number);
+            Posts result = apiInstance.getPostsByNumber(number);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling PostApi#getPostsByNumber");
+            System.err.println("Exception when calling PostsApi#getPostsByNumber");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Post-getPostsByNumber-0-groovy">
+  <div class="tab-pane" id="examples-Posts-getPostsByNumber-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
-                            <div class="tab-pane" id="examples-Post-getPostsByNumber-0-objc">
+                            <div class="tab-pane" id="examples-Posts-getPostsByNumber-0-objc">
                               <pre class="prettyprint"><code class="language-cpp">Integer *number = 56; // 
 
-PostApi *apiInstance = [[PostApi alloc] init];
+PostsApi *apiInstance = [[PostsApi alloc] init];
 
 // Get a number of posts per user
 [apiInstance getPostsByNumberWith:number
-              completionHandler: ^(Post output, NSError* error) {
+              completionHandler: ^(Posts output, NSError* error) {
                             if (output) {
                                 NSLog(@"%@", output);
                             }
@@ -890,10 +929,10 @@ PostApi *apiInstance = [[PostApi alloc] init];
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Post-getPostsByNumber-0-javascript">
-                              <pre class="prettyprint"><code class="language-js">var Api = require('api');
+                            <div class="tab-pane" id="examples-Posts-getPostsByNumber-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var ApiDocumentation = require('api_documentation');
 
-var api = new Api.PostApi()
+var api = new ApiDocumentation.PostsApi()
 var number = 56; // {{Integer}} 
 
 var callback = function(error, data, response) {
@@ -907,10 +946,10 @@ api.getPostsByNumber(number, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Post-getPostsByNumber-0-angular">
+                            <!--<div class="tab-pane" id="examples-Posts-getPostsByNumber-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
-                            <div class="tab-pane" id="examples-Post-getPostsByNumber-0-csharp">
+                            <div class="tab-pane" id="examples-Posts-getPostsByNumber-0-csharp">
                               <pre class="prettyprint"><code class="language-cs">using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
@@ -924,18 +963,18 @@ namespace Example
         public void main()
         {
 
-            var apiInstance = new PostApi();
+            var apiInstance = new PostsApi();
             var number = 56;  // Integer | 
 
             try
             {
                 // Get a number of posts per user
-                Post result = apiInstance.getPostsByNumber(number);
+                Posts result = apiInstance.getPostsByNumber(number);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling PostApi.getPostsByNumber: " + e.Message );
+                Debug.Print("Exception when calling PostsApi.getPostsByNumber: " + e.Message );
             }
         }
     }
@@ -943,28 +982,28 @@ namespace Example
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Post-getPostsByNumber-0-php">
+                            <div class="tab-pane" id="examples-Posts-getPostsByNumber-0-php">
                               <pre class="prettyprint"><code class="language-php"><&#63;php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\ApiPostApi();
+$api_instance = new Swagger\Client\ApiPostsApi();
 $number = 56; // Integer | 
 
 try {
     $result = $api_instance->getPostsByNumber($number);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PostApi->getPostsByNumber: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling PostsApi->getPostsByNumber: ', $e->getMessage(), PHP_EOL;
 }
 ?></code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Post-getPostsByNumber-0-perl">
+                            <div class="tab-pane" id="examples-Posts-getPostsByNumber-0-perl">
                               <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
 use WWW::SwaggerClient::Configuration;
-use WWW::SwaggerClient::PostApi;
+use WWW::SwaggerClient::PostsApi;
 
-my $api_instance = WWW::SwaggerClient::PostApi->new();
+my $api_instance = WWW::SwaggerClient::PostsApi->new();
 my $number = 56; # Integer | 
 
 eval { 
@@ -972,11 +1011,11 @@ eval {
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling PostApi->getPostsByNumber: $@\n";
+    warn "Exception when calling PostsApi->getPostsByNumber: $@\n";
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Post-getPostsByNumber-0-python">
+                            <div class="tab-pane" id="examples-Posts-getPostsByNumber-0-python">
                               <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
 import time
 import swagger_client
@@ -984,7 +1023,7 @@ from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PostApi()
+api_instance = swagger_client.PostsApi()
 number = 56 # Integer | 
 
 try: 
@@ -992,7 +1031,7 @@ try:
     api_response = api_instance.get_posts_by_number(number)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling PostApi->getPostsByNumber: %s\n" % e)</code></pre>
+    print("Exception when calling PostsApi->getPostsByNumber: %s\n" % e)</code></pre>
                             </div>
                           </div>
 
@@ -1049,12 +1088,12 @@ except ApiException as e:
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/Post"
+        "$ref" : "#/components/schemas/Posts"
       }
     },
     "application/xml" : {
       "schema" : {
-        "$ref" : "#/components/schemas/Post"
+        "$ref" : "#/components/schemas/Posts"
       }
     }
   }
@@ -1102,11 +1141,11 @@ except ApiException as e:
   "content" : {
     "application/Json" : {
       "schema" : {
-        "type" : "object",
-        "example" : {
-          "message" : "error 400"
-        },
-        "x-content-type" : "application/Json"
+        "$ref" : "#/components/schemas/ApiResponse"
+      },
+      "example" : {
+        "code" : 400,
+        "message" : "User not idicated"
       }
     }
   }
@@ -1132,58 +1171,6 @@ except ApiException as e:
                                     </script>
                                   </div>
                                   <input id='responses-getPostsByNumber-400-schema-data' type='hidden' value=''></input>
-                                </div>
-                            </div>
-
-                            <h3> Status: 404 - User not found </h3>
-
-                            <ul class="nav nav-tabs nav-tabs-examples" >
-                                <li class="active">
-                                  <a data-toggle="tab" href="#responses-getPostsByNumber-404-schema">Schema</a>
-                                </li>
-
-                            </ul>
-
-                            <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-getPostsByNumber-404-schema">
-                                  <div id='responses-getPostsByNumber-404-schema-404' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
-                                    <script>
-                                      $(document).ready(function() {
-                                        var schemaWrapper = {
-  "description" : "User not found",
-  "content" : {
-    "application/Json" : {
-      "schema" : {
-        "type" : "object",
-        "example" : {
-          "message" : "error 404"
-        },
-        "x-content-type" : "application/Json"
-      }
-    }
-  }
-};
-                                        var schema = schemaWrapper.content["application/Json"].schema;
-                                        if (schema.$ref != null) {
-                                          schema = defsParser.$refs.get(schema.$ref);
-                                        } else {
-                                          schemaWrapper.components = {};
-                                          schemaWrapper.components.schemas = Object.assign({}, defs);
-                                          $RefParser.dereference(schemaWrapper).catch(function(err) {
-                                            console.log(err);
-                                          });
-                                        }
-
-                                        //console.log(JSON.stringify(schema));
-                                        var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-getPostsByNumber-404-schema-data').val(stringify(schema));
-                                        var result = $('#responses-getPostsByNumber-404-schema-404');
-                                        result.empty();
-                                        result.append(view.render());
-                                      });
-                                    </script>
-                                  </div>
-                                  <input id='responses-getPostsByNumber-404-schema-data' type='hidden' value=''></input>
                                 </div>
                             </div>
 
@@ -1294,9 +1281,9 @@ UserApi *apiInstance = [[UserApi alloc] init];
                             </div>
 
                             <div class="tab-pane" id="examples-User-getUserByUsername-0-javascript">
-                              <pre class="prettyprint"><code class="language-js">var Api = require('api');
+                              <pre class="prettyprint"><code class="language-js">var ApiDocumentation = require('api_documentation');
 
-var api = new Api.UserApi()
+var api = new ApiDocumentation.UserApi()
 var username = username_example; // {{String}} 
 
 var callback = function(error, data, response) {
@@ -1486,58 +1473,6 @@ except ApiException as e:
                                 </div>
                             </div>
 
-                            <h3> Status: 400 - Invalid username supplied </h3>
-
-                            <ul class="nav nav-tabs nav-tabs-examples" >
-                                <li class="active">
-                                  <a data-toggle="tab" href="#responses-getUserByUsername-400-schema">Schema</a>
-                                </li>
-
-                            </ul>
-
-                            <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-getUserByUsername-400-schema">
-                                  <div id='responses-getUserByUsername-400-schema-400' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
-                                    <script>
-                                      $(document).ready(function() {
-                                        var schemaWrapper = {
-  "description" : "Invalid username supplied",
-  "content" : {
-    "application/Json" : {
-      "schema" : {
-        "type" : "object",
-        "example" : {
-          "message" : "error 400"
-        },
-        "x-content-type" : "application/Json"
-      }
-    }
-  }
-};
-                                        var schema = schemaWrapper.content["application/Json"].schema;
-                                        if (schema.$ref != null) {
-                                          schema = defsParser.$refs.get(schema.$ref);
-                                        } else {
-                                          schemaWrapper.components = {};
-                                          schemaWrapper.components.schemas = Object.assign({}, defs);
-                                          $RefParser.dereference(schemaWrapper).catch(function(err) {
-                                            console.log(err);
-                                          });
-                                        }
-
-                                        //console.log(JSON.stringify(schema));
-                                        var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-getUserByUsername-400-schema-data').val(stringify(schema));
-                                        var result = $('#responses-getUserByUsername-400-schema-400');
-                                        result.empty();
-                                        result.append(view.render());
-                                      });
-                                    </script>
-                                  </div>
-                                  <input id='responses-getUserByUsername-400-schema-data' type='hidden' value=''></input>
-                                </div>
-                            </div>
-
                             <h3> Status: 404 - User not found </h3>
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
@@ -1557,11 +1492,11 @@ except ApiException as e:
   "content" : {
     "application/Json" : {
       "schema" : {
-        "type" : "object",
-        "example" : {
-          "message" : "error 404"
-        },
-        "x-content-type" : "application/Json"
+        "$ref" : "#/components/schemas/ApiResponse"
+      },
+      "example" : {
+        "code" : 404,
+        "message" : "User not found"
       }
     }
   }
