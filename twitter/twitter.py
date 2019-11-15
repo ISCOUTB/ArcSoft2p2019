@@ -68,7 +68,7 @@ class Twitter:
 
 		# Create User object
 		user = self.__api.get_user(self.__username)
-
+		
 		info = {}
 		info["id"] = user.id #The integer representation of the unique identifier for this User
 		info["username"] = user.screen_name #The screen name, handle, or alias that this user identifies themselves with
@@ -87,7 +87,7 @@ class Twitter:
 		# Get the last tweets
 		tweets =  self.__api.user_timeline(self.__username)
 
-		info = {}
+		info = []
 		k = 1
 		for tweet in tweets:
 			if tweet.favorite_count:
@@ -96,7 +96,7 @@ class Twitter:
 				v["likes"] = tweet.favorite_count #Indicates approximately how many times this post has been liked by users
 				v["efficiency"] = round((tweet.favorite_count/tweet.user.followers_count)*100,1)#Indicates the efficiency of a post
 				v["user"] = tweet.user.id #The user id who made the post
-				info[k] = v
+				info.append(v)
 				k+=1
 				if k == number+1:
 					break

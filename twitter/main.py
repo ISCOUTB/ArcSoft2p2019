@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, make_response, jsonify
 from twitter import Twitter
 
 app = Flask(__name__)
@@ -13,7 +13,11 @@ def index():
 @app.route('/twitter/user/', methods=['GET'])
 @app.route('/twitter/user/<string:username>', methods=['GET'])
 def user(username = "Aztrarok"):
-		return jsonify(api.get_user(username))
+	try:
+		message = api.get_user(username)
+	except:
+		return make_response(jsonify({'code': 404, 'message': 'User not found.'}), 404)
+	return jsonify(message)
 
 @app.route('/twitter/posts/', methods=['GET'])
 @app.route('/twitter/posts/<int:number>', methods=['GET'])
@@ -24,7 +28,11 @@ def posts(number = 5):
 			number = 5
 		else:
 			number = 20
-	return jsonify(api.get_tweets(number))
+	try:
+		message = api.get_tweets(number)
+	except:
+		return make_response(jsonify({'code': 400, 'message': 'User not indicated.'}), 400)
+	return jsonify(message)
 
 if __name__== '__main__':
 	app.run(debug = True, host='0.0.0.0', port=80)
