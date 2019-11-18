@@ -48,12 +48,12 @@ These are the available routes:
 * User method
 
 ```
-/twitter/user/<username>
+/user/<username>
 ```
 
 * Posts method
 
 ```
-/twitter/posts/<number>
+/posts/<number>
 ```
 > To see the API structure in more detail, look at the [API documentation](https://ingenieriadesistemasutb.github.io/ArcSoft2p2019/).
