@@ -42,4 +42,18 @@ To install Flask we use the following command:
 pip3 install flask
 ```
 
+### Routes
+These are the available routes:
+
+* User method
+
+```
+/twitter/user/<username>
+```
+
+* Posts method
+
+```
+/twitter/posts/<number>
+```
 > To see the API structure in more detail, look at the [API documentation](https://ingenieriadesistemasutb.github.io/ArcSoft2p2019/).
