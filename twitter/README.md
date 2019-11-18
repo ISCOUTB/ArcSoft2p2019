@@ -47,13 +47,73 @@ These are the available routes:
 
 * User method
 
+We obtain the username and return the information associated with it.
+
 ```
 /user/<username>
 ```
 
+Example:
+
+```
+curl -X "https://ArcSoft2p2019/twitter/user/Aztrarok"
+```
+```
+{
+  "followers": 27, 
+  "fullname": "Ray Diaz Vega", 
+  "id": 959874859374465025, 
+  "post": 230, 
+  "username": "Aztrarok"
+}
+```
+
 * Posts method
+
+We obtain the information of the last 5 publications made by the user
 
 ```
 /posts/<number>
 ```
+
+Example:
+
+```
+curl -X "https://ArcSoft2p2019/twitter/posts/"
+```
+```
+[
+  {
+    "efficiency": 3.7, 
+    "id": 1189654327247474689, 
+    "likes": 1, 
+    "user": 959874859374465025
+  }, 
+  {
+    "efficiency": 3.7, 
+    "id": 1189576053607620621, 
+    "likes": 1, 
+    "user": 959874859374465025
+  }, 
+  {
+    "efficiency": 3.7, 
+    "id": 1189553796541607936, 
+    "likes": 1, 
+    "user": 959874859374465025
+  }, 
+  {
+    "efficiency": 3.7, 
+    "id": 1189514506625540096, 
+    "likes": 1, 
+    "user": 959874859374465025
+  }, 
+  {
+    "efficiency": 3.7, 
+    "id": 1189262865821245442, 
+    "likes": 1, 
+    "user": 959874859374465025
+  }
+]
+```
+
 > To see the API structure in more detail, look at the [API documentation](https://ingenieriadesistemasutb.github.io/ArcSoft2p2019/).
