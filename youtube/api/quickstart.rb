@@ -97,8 +97,10 @@ def videolist(service, part, **params)
     video_info['user'] = video_info.fetch('id')
     string[(i+1).to_s]=video_info
   end
-  puts (string)
-  return string
+
+  x = JSON[string]
+  puts (x)
+  return x
 end
 
 videolist(service, 'contentDetails', channel_id:'UC_x5XG1OV2P6uZZ5FSM9Ttw', max_results:'5')

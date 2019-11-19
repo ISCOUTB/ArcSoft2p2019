@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: MyString
+  likes: 1
+  efficiency: 1.5
+  user: MyString
+
+two:
+  id: MyString
+  likes: 1
+  efficiency: 1.5
+  user: MyString
