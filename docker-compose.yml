@@ -6,11 +6,6 @@ services:
     restart: always
     ports:
       - 8081:80
-  facebook:
-    build: ./facebook
-    restart: always
-    ports:
-      - 8082:80
   youtube:
     build: ./youtube
     restart: always
@@ -44,7 +39,7 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - grafana-volume:/var/lib/grafana
+      - /var/lib/grafana
   influxdb:
     image: influxdb
     restart: always
@@ -52,9 +47,5 @@ services:
       - 8086:8086
 
     volumes:
-      - influxdb-volume:/var/lib/influxdb
-volumes:
-  grafana-volume:
-    external: true
-  influxdb-volume:
-    external: true
+      - /var/lib/influxdb
+
