@@ -10,8 +10,8 @@ const mongoose = require('mongoose');
 
 //settingsd
 //motor de plantillas
-app.set('port',process.env.PORT || 8000)
-//escuche en el puerto 8000
+app.set('port',process.env.PORT || 80)
+//escuche en el puerto 80
 app.engine('ejs',engine)
 app.set('view engine','ejs')
 app.set('views',path.join(__dirname,'views'))//unir directorios
@@ -48,7 +48,7 @@ app.use(require('./routes/index'));
 //static files
 
 //starting the server
-app.listen(app.get('port'), ()=>{
+app.listen(app.get('port'),()=>{
     console.log('Server on port', app.get('port'));
 });
 

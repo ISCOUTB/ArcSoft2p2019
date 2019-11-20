@@ -3,8 +3,6 @@ const router= express.Router()
 const Instagram= require('node-instagram').default
 const {clientId,clientSecret} =require('../keys').instagram
 
-const Usuario = require('../models/user');
-
 //modulo
 const instagram= new Instagram({
     clientId:clientId,
@@ -15,7 +13,7 @@ router.get('/',(req,res)=>{
     res.redirect('/login');
 })
 
-const redirectUri='http://localhost:8000/handleauth'
+const redirectUri='http://localhost:80/handleauth'
 router.get('/auth/instagram',(req,res)=>{
     res.redirect(
         instagram.getAuthorizationUrl(
@@ -125,16 +123,6 @@ router.get('/post',async (req,res)=>{
     );
 
 });
-
-
-
-
-
-
-
-
-
-
 
 
 module.exports=router
