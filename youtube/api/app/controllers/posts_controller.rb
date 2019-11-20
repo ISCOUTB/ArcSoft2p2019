@@ -10,8 +10,13 @@ class PostsController < ApplicationController
     service = Google::Apis::YoutubeV3::YouTubeService.new
     service.client_options.application_name = APPLICATION_NAME
     service.authorization = authorize
-    @posts = self.videolist(service, 'contentDetails', channel_id:'UC_x5XG1OV2P6uZZ5FSM9Ttw', max_results:'5')
-
+    if params.fetch("channel_id") != ""
+      @posts = self.videolist(service, 'contentDetails', channel_id:params.fetch("channel_id"), max_results:params.fetch("cant"))
+    else
+      id = self.search_id(service, 'id', q:params.fetch("username"), type:'channel')
+      puts (id)
+      @posts = self.videolist(service, 'contentDetails', channel_id:id, max_results:params.fetch("cant"))
+    end
     render json: @posts
   end
 

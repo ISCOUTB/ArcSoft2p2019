@@ -1,11 +1,19 @@
+require 'funciones.rb'
+APPLICATION_NAME = 'YouTube Data API Ruby Tests'
+
 class UsersController < ApplicationController
+  include Funciones
   before_action :set_user, only: [:show, :update, :destroy]
 
   # GET /users
   def index
-    @users = User.all
+    service = Google::Apis::YoutubeV3::YouTubeService.new
+    service.client_options.application_name = APPLICATION_NAME
+    service.authorization = authorize
+    @users = self.search_by_username(service, 'id', q:params.fetch("username"), type:'channel')
 
     render json: @users
+
   end
 
   # GET /users/1
