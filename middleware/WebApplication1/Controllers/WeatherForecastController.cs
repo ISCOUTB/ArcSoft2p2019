@@ -44,7 +44,16 @@ namespace WebApplication1.Controllers
 
             IList<Reservation> documents = BsonSerializer.Deserialize<IList<Reservation>>(Client);
             collection.InsertOne(documents[0]);
-            return "Agregado";
+
+            var query = collection.AsQueryable<Reservation>();
+            var result = from n in query
+                         where n.Username == "t00045753"
+                         select n;
+
+            if (result != null)
+                return result;
+            else
+                return "[]";
 
 
 
