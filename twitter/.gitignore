@@ -1,0 +1,4 @@
+# ignore a .lock .toml .json files
+*.lock
+*.toml
+*.json
