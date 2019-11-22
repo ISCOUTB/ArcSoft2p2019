@@ -79,6 +79,7 @@ Install Flask
 Within the activated environment, use the following command to install Flask:
 
 $ pip install Flask
+
 Flask is now installed. 
 
 ### Routes
