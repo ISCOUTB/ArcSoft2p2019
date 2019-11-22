@@ -23,11 +23,11 @@ $router->get('/token', function ()  {
     // reddit username
 	$username = 'Hei_San';
 	// reddit password
-	$password = 'nacional97';
+	$password = '';
 	// client id
-	$clientId = 'OrDWl9bHpw0_eA';
+	$clientId = '';
 	// client secret
-	$clientSecret = 'GUcXmPqvvQ5nZuXZnjzNNufvT8o';
+	$clientSecret = '';
 	// post params 
 	$params = array(
 		'grant_type' => 'password',
