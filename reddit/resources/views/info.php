@@ -9,25 +9,33 @@
 
     <body>
         <div class="container">
-            <form action="infor" method="POST" method="GET">
             <div class="col align-self-center">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="col-md-8 col-md-offset-2"><br />
                     <div aling="center">
-                        <div class="row justify-content-md-center" ><h1 class="text-danger">Api <?php echo $name; ?> 
+                        <div class="row justify-content-md-center" ><h1 class="text-danger">Api Reddit
                         <img src="http://www.vectorico.com/download/social_media/Reddit-Icon.png" width="125px" height="125px"></h1></div>
-                    </div>
-                    <div class="form-group">
-                        <label for="username">Username: </label>
-                        <input class="form-control border-danger" type="text" name="nombre" placeholder="Example: jcpardo" required/><br>
-                    </div>
-                    
-                    <div class="spinner-border text-primary" role="status">
-                        <input class="btn btn-danger" type="submit" name="datos" value="Obtener Datos" />
                     </div>
                   
             </div><br/>
                 
+                <div class="container">
+                    <table class="table">
+                        <tr>
+                            <th>Id</th>
+                            <th>Username</th>
+                            <th>Karma</th>
+                        </tr>
+                        <?php
+                            echo '
+                            <tr>
+                                <td>'.$ident.'</td>
+                                <td>'.$usuario.'</td>
+                                <td>'.$elkarma.'</td>
+                            </tr>
+                            ';                            
+                        ?>
+                    </table>
+                </div>
             </div>
             </form>
 
