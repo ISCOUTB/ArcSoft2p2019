@@ -51,7 +51,7 @@ $router->get('/token', function ()  {
 	// display response from reddit
     var_dump($response, true);
 
-    $accessToken = '380878634982-6f8fZXeCYxBajuAH_4Crtb3zgmQ';
+    $accessToken = '';
     // type access token
     $accessTokenType = 'bearer';
 
@@ -77,8 +77,8 @@ $router->get('/token', function ()  {
 
 $router->get('/users', function ()  {
     $url ='https://ssl.reddit.com/api/v1/access_token';
-    $clientId = 'OrDWl9bHpw0_eA';
-    $clientSecret = 'GUcXmPqvvQ5nZuXZnjzNNufvT8o';
+    $clientId = '';
+    $clientSecret = '';
 
     // post variables
     $fields = array (
