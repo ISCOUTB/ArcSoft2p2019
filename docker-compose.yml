@@ -33,6 +33,13 @@ services:
     restart: always
     ports:
       - 80:80
+  influxdb:
+    image: influxdb
+    restart: always
+    ports:
+      - 8086:8086
+    volumes:
+      - /var/lib/influxdb
   grafana:
     image: grafana/grafana
     restart: always
@@ -40,12 +47,13 @@ services:
       - 3000:3000
     volumes:
       - /var/lib/grafana
-  influxdb:
-    image: influxdb
-    restart: always
-    ports:
-      - 8086:8086
+    command: docker run --rm \
+            -e INFLUXDB_DB=telegraf -e INFLUXDB_ADMIN_ENABLED=true \
+            -e INFLUXDB_ADMIN_USER=admin \
+            -e INFLUXDB_ADMIN_PASSWORD=supersecretpassword \
+            -e INFLUXDB_USER=telegraf -e INFLUXDB_USER_PASSWORD=secretpassword \
+            -v influxdb-volume:/var/lib/influxdb \
+            influxdb /init-influxdb.sh
 
-    volumes:
-      - /var/lib/influxdb
 
+    
