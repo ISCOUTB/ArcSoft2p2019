@@ -1,15 +1,27 @@
 # Twitter
-Conditions of use of the information extraction api.
+
+Conditions of use for the api of extraction information .
+
 Can:
+
 • Develop applications that automatically transmit information in Tweets, while not violating the rules of automated Tweets.
+
 • Publish creative campaigns that automatically respond to users who interact with your content.
+
 • Develop solutions that respond to users automatically in Direct Messages.
+
 • Try new things that help people (and that comply with our rules).
+
 • Ensure that your application offers a good user experience and that it has a good performance, and verify that it continues to be so over time.
+
 You can not:
+
 • Breach these or other policies. Pay special attention to our rules on abusive practices and user privacy.
+
 • Abuse the Twitter API or try to bypass speed limits.
+
 • Send spam or import to users, or send them any type of unsolicited messages.
+
 ## Tweepy
 [Tweepy](http://docs.tweepy.org/en/latest/) is an open source Python package that gives you a very convenient way to access the Twitter API with Python. Tweepy includes a set of classes and methods that represent the Twitter API models, and transparently handles various implementation details.
 
