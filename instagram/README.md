@@ -1,3 +1,4 @@
+# ![Image](example/assets/instagram.png)
 # instagram-node-api [![Build Status](https://travis-ci.org/squidit/instagram-node-api.svg?branch=master)](https://travis-ci.org/squidit/instagram-node-api) ![[Depencies status](https://david-dm.org/squidit/instagram-node-api/)](https://david-dm.org/squidit/instagram-node-api.svg) [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](http://standardjs.com/)
 
 This is a node library which emulates Instagram's Private API. This library is packed full with almost all the features from the Instagram Android App. This includes media uploads, direct messaging, stories and more.
@@ -22,6 +23,9 @@ const instagram = new Instagram({
   accessToken: 'user-access-token',
 });
 ```
+## Documentation
+
+Documentation is available at https://www.npmjs.com/package/node-instagram
 
 ### Dependencies
 Install/enable the required node extensions and dependencies. You can learn how to do so [here](|https://www.npmjs.com/package/node-instagrams).
