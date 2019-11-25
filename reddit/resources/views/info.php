@@ -32,7 +32,7 @@
                                 <td>'.$usuario.'</td>
                                 <td>'.$elkarma.'</td>
                             </tr>
-                            ';                            
+                            ';                        
                         ?>
                     </table>
                 </div>

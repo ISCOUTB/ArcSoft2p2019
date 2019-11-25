@@ -17,8 +17,8 @@ $router->get('/lumen', function () use ($router) {
 
 $router->get('/', ['uses' => 'UserController@index']);
 
-$router->post('/infor', ['inf' => 'UserController@mostrar']);
-
 $router->get('/user', ['uses' => 'UserController@users']);
+
+$router->get('/datauser', ['uses' => 'UserController@data']);
 
 
