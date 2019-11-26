@@ -39,15 +39,19 @@ services:
     ports:
       - 8086:8086
     volumes:
-      - /var/lib/influxdb
+      - influxdb-volume:/var/lib/influxdb
   grafana:
     image: grafana/grafana
     restart: always
     ports:
       - 3000:3000
     volumes:
-      - /var/lib/grafana
+      - grafana-volume:/var/lib/grafana
 
-
+volumes:
+  grafana-volume:
+    external: false
+  influxdb-volume:
+    external: false
 
     
