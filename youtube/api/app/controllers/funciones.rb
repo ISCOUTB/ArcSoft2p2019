@@ -25,23 +25,34 @@ module Funciones
     # SCOPE FOR WHICH THIS SCRIPT REQUESTS AUTHORIZATION
     SCOPE = Google::Apis::YoutubeV3::AUTH_YOUTUBE_READONLY
 
+    FileUtils.mkdir_p(File.dirname(CREDENTIALS_PATH))
+    $client_id = Google::Auth::ClientId.from_file(CLIENT_SECRETS_PATH)
+    $token_store = Google::Auth::Stores::FileTokenStore.new(file: CREDENTIALS_PATH)
+    $authorizer = Google::Auth::UserAuthorizer.new(
+        $client_id, SCOPE, $token_store)
     def authorize
-        FileUtils.mkdir_p(File.dirname(CREDENTIALS_PATH))
-        client_id = Google::Auth::ClientId.from_file(CLIENT_SECRETS_PATH)
-        token_store = Google::Auth::Stores::FileTokenStore.new(file: CREDENTIALS_PATH)
-        authorizer = Google::Auth::UserAuthorizer.new(
-            client_id, SCOPE, token_store)
         user_id = 'default'
-        credentials = authorizer.get_credentials(user_id)
+        credentials = $authorizer.get_credentials(user_id)
+        if credentials.nil?
+            url = $authorizer.get_authorization_url(base_url: REDIRECT_URI)
+            return url
+        end
+        credentials
+    end
+    def get_code(code)
+        user_id = 'default'
+        credentials = $authorizer.get_credentials(user_id)
+        credentials = $authorizer.get_and_store_credentials_from_code(
+            user_id: user_id, code: code, base_url: REDIRECT_URI)
+        credentials
+    end
+    def authorize_org
+        user_id = 'default'
+        credentials = $authorizer.get_credentials(user_id)
 
         if credentials.nil?
-            url = authorizer.get_authorization_url(base_url: REDIRECT_URI)
-            puts "Open the following URL in the browser and enter the " +
-                "resulting code after authorization"
-            puts url
-            code = gets
-            credentials = authorizer.get_and_store_credentials_from_code(
-            user_id: user_id, code: code, base_url: REDIRECT_URI)
+            code = authorize()
+            get_code(code)
         end
         credentials
     end
@@ -71,6 +82,7 @@ module Funciones
             'id'=> "#{item.fetch("id")}",
             'likes'=> "#{item.fetch("statistics").fetch("likeCount")}".to_i,
         }
+        puts (item)
         return string
     end
   
@@ -85,7 +97,7 @@ module Funciones
             videoIds[i]= (item.fetch("contentDetails").fetch("upload").fetch("videoId")).to_s
             video_info = videoinfo(service, "statistics", id: videoIds[i])
             video_info['efficiency'] = (video_info.fetch('likes').to_f/channel_info.fetch('followers').to_f)*100
-            video_info['user'] = video_info.fetch('id')
+            video_info['user'] = channel_info.fetch('id')
             string[(i+1).to_s]=video_info
         end
         puts (string)

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :authorize_codes
+  resources :authorizes
   resources :users
   resources :posts
   get 'user/getUserByUsername'

@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def index
     service = Google::Apis::YoutubeV3::YouTubeService.new
     service.client_options.application_name = APPLICATION_NAME
-    service.authorization = authorize
+    service.authorization = authorize_org()
     @users = self.search_by_username(service, 'id', q:params.fetch("username"), type:'channel')
 
     render json: @users
