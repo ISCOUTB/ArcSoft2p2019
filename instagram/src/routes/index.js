@@ -13,7 +13,7 @@ router.get('/',(req,res)=>{
     res.redirect('/login');
 })
 
-const redirectUri='http://localhost:80/handleauth'
+const redirectUri='http://localhost:8084/handleauth'
 router.get('/auth/instagram',(req,res)=>{
     res.redirect(
         instagram.getAuthorizationUrl(
@@ -40,7 +40,7 @@ router.get('/handleauth', async (req,res)=>{
         req.session.user_id=data.user.id
         //guardar el acces token
         instagram.config.accessToken =req.session.access_token
-        res.redirect('/user')
+        res.redirect('/instagram/user')
        
       } catch (err) {
         res.json(err);
@@ -59,7 +59,7 @@ router.get('/logout',(req,res)=>{
     res.redirect('/')
     
 })
-router.get('/user',async (req,res)=>{
+router.get('/instagram/user',async (req,res)=>{
     //trabajar con endpoints
     const profileData= await instagram.get('users/self');
     const media= await instagram.get('users/self/media/recent');
@@ -82,7 +82,7 @@ router.get('/user',async (req,res)=>{
 });
 
 //post
-router.get('/post',async (req,res)=>{
+router.get('/instagram/post',async (req,res)=>{
 
     //Parametros opcionales
 

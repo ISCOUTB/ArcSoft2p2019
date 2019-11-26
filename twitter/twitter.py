@@ -70,7 +70,7 @@ class Twitter:
 		user = self.__api.get_user(self.__username)
 		
 		info = {}
-		info["id"] = user.id_str #The integer representation of the unique identifier for this User
+		info["ID"] = user.id_str #The integer representation of the unique identifier for this User
 		info["username"] = user.screen_name #The screen name, handle, or alias that this user identifies themselves with
 		info["fullname"] = user.name #The name of the user, as they’ve defined it
 		info["followers"] = str(user.followers_count) #The number of followers this account currently has
@@ -91,11 +91,11 @@ class Twitter:
 		for tweet in tweets:
 			if tweet.favorite_count:
 				t = {}
-				t["id"] = tweet.id_str #The integer representation of the unique identifier for this
+				t["ID"] = tweet.id_str #The integer representation of the unique identifier for this
 				t["likes"] = str(tweet.favorite_count) #Indicates approximately how many times this post has been liked by users
 				t["efficiency"] = str(round((tweet.favorite_count/tweet.user.followers_count)*100,4))#Indicates the efficiency of a post
 				t["date"] = tweet.created_at.strftime("%Y-%m-%d %H:%M:%S")
-				t["user"] = tweet.user.id_str #The user id who made the post
+				t["username"] = tweet.user.screen_name #The username of the user who made the publication
 				info.append(t)
 				k+=1
 				if k == number+1:

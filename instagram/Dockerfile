@@ -17,4 +17,4 @@ COPY . .
 
 
 #run app 
-CMD ["node","start"]
+CMD ["npm","start"]
