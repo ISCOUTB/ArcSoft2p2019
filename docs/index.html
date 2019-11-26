@@ -699,7 +699,7 @@
     },
     "message" : {
       "type" : "string",
-      "example" : "User not found"
+      "example" : "User not found."
     }
   }
 };
@@ -709,21 +709,25 @@
     "id" : 1050118621198921700,
     "likes" : 1,
     "efficiency" : 3.7,
+    "date" : "2019-10-30 21:24:28",
     "user" : 959874859374465000
   }, {
     "id" : 1050118621198921700,
     "likes" : 1,
     "efficiency" : 3.7,
+    "date" : "2019-10-30 21:24:28",
     "user" : 959874859374465000
   }, {
     "id" : 1050118621198921700,
     "likes" : 1,
     "efficiency" : 3.7,
+    "date" : "2019-10-30 21:24:28",
     "user" : 959874859374465000
   }, {
     "id" : 1050118621198921700,
     "likes" : 1,
     "efficiency" : 3.7,
+    "date" : "2019-10-30 21:24:28",
     "user" : 959874859374465000
   } ],
   "items" : {
@@ -735,16 +739,20 @@
   "properties" : {
     "id" : {
       "type" : "integer",
-      "description" : "The integer representation of the unique identifier for this"
+      "description" : "The integer representation of the unique identifier for this post."
     },
     "likes" : {
       "type" : "integer",
-      "description" : "Indicates approximately how many times this post has been liked by\n users"
+      "description" : "Indicates approximately how many times this post has been liked by users."
     },
     "efficiency" : {
       "type" : "number",
-      "description" : "Indicates the efficiency of a post",
+      "description" : "Indicates the efficiency of a post.",
       "format" : "float"
+    },
+    "date" : {
+      "type" : "string",
+      "description" : "Date the tweet was made."
     },
     "user" : {
       "type" : "integer",
@@ -758,7 +766,7 @@
   "properties" : {
     "id" : {
       "type" : "integer",
-      "description" : "The integer representation of the unique identifier for this User",
+      "description" : "The integer representation of the unique identifier for this User.",
       "format" : "uuid",
       "example" : 959874859374465000
     },
@@ -861,7 +869,7 @@
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Posts-getPostsByNumber-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://ArcSoft2p2019/{service}/posts/{number}"</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://localhost/{service}/posts/{number}"</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-Posts-getPostsByNumber-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -1145,7 +1153,7 @@ except ApiException as e:
       },
       "example" : {
         "code" : 400,
-        "message" : "User not idicated"
+        "message" : "User not idicated."
       }
     }
   }
@@ -1212,7 +1220,7 @@ except ApiException as e:
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-User-getUserByUsername-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://ArcSoft2p2019/{service}/user/{username}"</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://localhost/{service}/user/{username}"</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-User-getUserByUsername-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -1496,7 +1504,7 @@ except ApiException as e:
       },
       "example" : {
         "code" : 404,
-        "message" : "User not found"
+        "message" : "User not found."
       }
     }
   }
