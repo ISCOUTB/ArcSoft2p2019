@@ -235,13 +235,13 @@ Con este se verifica que la obtención de los números de publicaciones, que se 
 ![](img_README/32.png)  
 
 # BIBLIOGRAFÍA:
-https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rbenv-on-ubuntu-18-04
-https://developers.google.com/youtube
-https://developers.google.com/youtube/v3/getting-started
-https://developers.google.com/youtube/v3/code_samples/ruby
-https://developers.google.com/sheets/api/quickstart/ruby
-https://rubygems.org/gems/sqlite3/versions/1.3.11?locale=es
-https://developers.google.com/youtube/v3/quickstart/ruby
-https://ruby-doc.org/core-2.4.0/Hash.html#method-i-transform_values-21
-https://www.rubydoc.info/github/google/google-api-ruby-client/Google/Apis/YoutubeV3/YouTubeService
-https://freivincampbell.github.io/blog/mi-primer-api-con-ruby-on-rails/
+https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rbenv-on-ubuntu-18-04  
+https://developers.google.com/youtube  
+https://developers.google.com/youtube/v3/getting-started  
+https://developers.google.com/youtube/v3/code_samples/ruby  
+https://developers.google.com/sheets/api/quickstart/ruby  
+https://rubygems.org/gems/sqlite3/versions/1.3.11?locale=es  
+https://developers.google.com/youtube/v3/quickstart/ruby  
+https://ruby-doc.org/core-2.4.0/Hash.html#method-i-transform_values-21  
+https://www.rubydoc.info/github/google/google-api-ruby-client/Google/Apis/YoutubeV3/YouTubeService  
+https://freivincampbell.github.io/blog/mi-primer-api-con-ruby-on-rails/  
