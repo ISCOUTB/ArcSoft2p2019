@@ -51,4 +51,14 @@ Lumen is a PHP micro-framework built to deliver microservices and blazing fast A
 
 <img src="https://user-images.githubusercontent.com/36655827/69650112-1be07b00-103c-11ea-82b4-c144d51beeff.png" width="500">
 
+## Examples
+
+#### To get User and karma :
+<img src="https://user-images.githubusercontent.com/36655827/69651850-b6da5480-103e-11ea-8057-902069b17f05.jpeg" width="700">
+
+
+#### To get the efficiency :
+<img src="https://user-images.githubusercontent.com/36655827/69651965-e5582f80-103e-11ea-95ec-64373c70a02e.jpeg" width="700">
+
+
 
