@@ -1,12 +1,16 @@
 # API DE YOUTUBE - RUBY ON RAILS
+
 **Integrantes**
 * Jose Herrera Aristizabal - T00041331
 * Edgar Calderón Padrón - T00049682
 * Maria Camila Villamizar Hernández - T00049721  
+
 **Profesor**  
 Jairo Enrique Serrano  
+
 **Institución**  
 Universidad Tecnológica de Bolívar  
+
 **Fecha**  
 Noviembre de 2019  
 
@@ -137,8 +141,8 @@ Al ejecutarlo, definiendo las variables a obtener en **User**, obtenemos lo sigu
 ![](img_README/18.png)  
 
 Al ejecutar los comandos presentados anteriormente se crean los archivos necesarios para la obtención y almacenamiento de la información. Los archivos de creación de la base de datos quedarían de la siguiente manera:  
-![][1] ![][2]  
-[1]:img_README/19.png  
+![][1] ![][2]
+[1]:img_README/19.png
 [2]:img_README/20.png  
 
 Una vez hecho esto se realiza el siguiente comando   
@@ -146,8 +150,8 @@ Una vez hecho esto se realiza el siguiente comando
 **_Sin hacer uso del comando anterior es imposible la correcta ejecución o puesta en marcha del servidor_**  
 
 Los controladores son creados abarcando todas las posibles peticiones que puedan realizarse, terminando de la siguiente manera:  
-![][1] ![][2]  
-[1]:img_README/21.png  
+![][1] ![][2]
+[1]:img_README/21.png
 [2]:img_README/22.png  
 
 # 5. Modificación de los controladores
