@@ -47,7 +47,7 @@ services:
       - 3000:3000
     volumes:
       - /var/lib/grafana
-      
+
     command: docker run --rm \
             -e INFLUXDB_DB=telegraf -e INFLUXDB_ADMIN_ENABLED=true \
             -e INFLUXDB_ADMIN_USER=admin \
@@ -55,5 +55,11 @@ services:
             -e INFLUXDB_USER=telegraf -e INFLUXDB_USER_PASSWORD=secretpassword \
             -v influxdb-volume:/var/lib/influxdb \
             influxdb /init-influxdb.sh
+    
+    volumes:
+      grafana-volume:
+        external: true
+      influxdb-volume:
+        external: true
 
     
