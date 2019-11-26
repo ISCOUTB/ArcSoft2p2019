@@ -17,7 +17,15 @@ https://www.reddit.com/api/v1/authorize?client_id=CLIENT_ID&response_type=TYPE&s
 
 ## GET ACCESS AND REFRESH TOKEN
 
-![WhatsApp Image 2019-11-25 at 5 49 25 PM](https://user-images.githubusercontent.com/36655827/69597190-19960680-0fd3-11ea-840a-ba3d4921014c.jpeg)
+-Authentication of the app created in reddit with the credentials it generates (ID client and secret client):
 
+<img src="https://user-images.githubusercontent.com/36655827/69597190-19960680-0fd3-11ea-840a-ba3d4921014c.jpeg" width="900">
 
-![WhatsApp Image 2019-11-25 at 5 46 08 PM](https://user-images.githubusercontent.com/36655827/69596374-5dd3d780-0fd0-11ea-94fb-5c0bed258479.jpeg)
+-Return the access token and the type of token:
+
+<img src="https://user-images.githubusercontent.com/36655827/69596374-5dd3d780-0fd0-11ea-94fb-5c0bed258479.jpeg" width="700">
+
+-We pass to the api of reddit our access token to authorize us and we can make the requests:
+
+<img src="https://user-images.githubusercontent.com/36655827/69646247-762a0d80-1035-11ea-85f3-dd2719991f2a.jpeg" width="900">
+
