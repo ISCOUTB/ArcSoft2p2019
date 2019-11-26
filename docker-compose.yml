@@ -58,8 +58,8 @@ services:
     
     volumes:
       grafana-volume:
-        external: true
+        external: false
       influxdb-volume:
-        external: true
+        external: false
 
     
