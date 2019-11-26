@@ -57,7 +57,7 @@ According to [the company](https://instagram.com/about/faq/):
 
 example: get user 
 ```
-http:localhost:80/user
+http:localhost:8084/instagram/user
 ```
 ```
 {
@@ -72,7 +72,7 @@ http:localhost:80/user
 
 example: get post for user (last 5 post)
 ```
-http:localhost:80/posts
+http:localhost:8084/instagram/posts
 ```
 ```
 {
@@ -117,3 +117,21 @@ Put the following in your environment:
 Then just use
 
     make test
+
+
+## Docker
+[Docker](https://www.docker.com/why-docker) is a tool designed to make it easier to create, deploy, and run applications by using containers. Containers allow a developer to package up an application with all of the parts it needs, such as libraries and other dependencies, and ship it all out as one package.
+
+To install docker we follow the official installation [guide](https://docs.docker.com/v17.09/engine/installation/).
+
+Create an image of our [Dockerfile](https://runnable.com/docker/python/dockerize-your-python-application) with the following command
+```
+ docker build -t image_name .
+```
+
+Deploy the application using the command
+```
+docker run -p 8084:80 image_name
+```
+
+Open the browser, in the navigation bar place http://localhost:8084 and we will see the available routes.
