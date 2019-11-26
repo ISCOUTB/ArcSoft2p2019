@@ -39,12 +39,16 @@ https://www.reddit.com/api/v1/authorize?client_id=CLIENT_ID&response_type=TYPE&s
 Documentation is available at https://www.reddit.com/dev/api/oauth 
 
 ## Dependencies
-**.** Lumen PHP Micro-Framework By Laravel
+    .Lumen PHP Micro-Framework By Laravel
 
-Download the Lumen installer :
-`composer global require "laravel/lumen-installer"`
+### Lumen PHP By laravel 
+Lumen is a PHP micro-framework built to deliver microservices and blazing fast APIs. Learn how to build and secure RESTful APIs with Lumen
+
+#### Download the Lumen installer :   
+`"composer global require "laravel/lumen-installer"`
 
 ## Routes
 
+<img src="https://user-images.githubusercontent.com/36655827/69650112-1be07b00-103c-11ea-82b4-c144d51beeff.png" width="500">
 
 
