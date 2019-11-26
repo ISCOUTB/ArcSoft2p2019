@@ -54,6 +54,12 @@ services:
           -e INFLUXDB_USER=telegraf -e INFLUXDB_USER_PASSWORD=secretpassword \
           -v influxdb-volume:/var/lib/influxdb \
           influxdb /init-influxdb.sh
+    
+    volumes:
+      grafana-volume:
+        external: false
+      influxdb-volume:
+        external: false
 
 
 
