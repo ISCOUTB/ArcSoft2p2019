@@ -9,13 +9,13 @@ def index():
 	if api.verify():
 		return """
 						<h2>Available routes</h2>
-						<p>User: /twitter/user/</p>
-						<p>Posts: /twitter/posts/</p>
+						<p>User: /user/</p>
+						<p>Posts: /posts/</p>
           	"""
 	return "Twitter Api: Working BAD"
 
-@app.route('/twitter/user/', methods=['GET'])
-@app.route('/twitter/user/<string:username>', methods=['GET'])
+@app.route('/user/', methods=['GET'])
+@app.route('/user/<string:username>', methods=['GET'])
 def user(username = "Aztrarok"):
 	try:
 		resp = make_response(jsonify(api.get_user(username)))
@@ -24,8 +24,8 @@ def user(username = "Aztrarok"):
 	resp.headers['Access-Control-Allow-Origin'] = '*'
 	return resp
 
-@app.route('/twitter/posts/', methods=['GET'])
-@app.route('/twitter/posts/<int:number>', methods=['GET'])
+@app.route('/posts/', methods=['GET'])
+@app.route('/posts/<int:number>', methods=['GET'])
 def posts(number = 5):
 	if number < 1 or number > 20:
 		print("The minimum number of tweets is 5 and the maximum is 20")
