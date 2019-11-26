@@ -1,72 +1,69 @@
-# README
-
-# DOCUMENTACIÓN DE LA API DE YOUTUBE EN RUBY ON RAILS
-
-## Integrantes
+# API DE YOUTUBE - RUBY ON RAILS
+**Integrantes**
 * Jose Herrera Aristizabal - T00041331
 * Edgar Calderón Padrón - T00049682
 * Maria Camila Villamizar Hernández - T00049721
-## Profesor
+**Profesor**
 Jairo Enrique Serrano 
-## Institución
+**Institución**
 Universidad Tecnológica de Bolívar
-## Fecha
+**Fecha**
 Noviembre de 2019
 
 
 # 1. Instalación de Ruby on Rails
-Lo primero que debemos hacer es instalar el entorno virtual ejecutando los siguientes comandos en la terminal  
-Se actualiza la máquina por medio de la línea de comando:
-```*sudo apt update*```
-Posterior a esto se instalan las dependencias requeridas para la instalación de Ruby
-```*sudo apt install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm5 libgdbm-dev*```
-Para la instalación de Ruby se presentan dos opciones que son *“rbenv”* y *“rvm”*, en este caso optamos por *“rbenv”* por lo cual nos ubicamos dentro de la carpeta y clonamos el repositorio de git con el comando:
-```*git clone https://github.com/rbenv/rbenv.git ~/.rbenv*```
-Agregamos la dirección de la carpeta *~/.rbenv/bin* a nuestras variables de entorno por medio de la línea de comando:
-```*echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc*```
-Se agrega el comando eval *"$(rbenv init -)"* al archivo *~/.bashrc* para que *rbenv* cargue automáticamente:
-```*echo 'eval "$(rbenv init -)"' >> ~/.bashrc*```
-Se aplican los cambios con el comando:
-```*source ~/.bashrc*```
-Se verifica si *“rbenv”* se encuentra instalado por medio de la línea de comando:
-```*type rbenv*```
-Se instala desde git *“ruby-build”* para simplificar la instalación de las versiones de ruby por medio del comando *“rbenv”*
-```*git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build*```
-Finalizada la configuración del comando *“rbenv”* proseguimos con la instalación de Ruby, para eso utilizamos el siguiente comando que nos enlista las distintas versiones disponibles de Ruby:
-```*rbenv install -l*```
-![](img_README/1.png)
-Se escoge la versión más reciente y se usa la línea de comando presentada a continuación, variando el número de la versión a utilizar:
-```*rbenv install 2.6.5*```
-![](img_README/2.png)
-Se define la versión instalada como la versión a utilizar en la máquina:
-```*rbenv global 2.6.5*```
-Para verificar la instalación de la versión escogida se hace uso de la línea de comando:
-```*ruby -v*```
-![](img_README/3.png)
-Con este proceso se puede dar por terminada la instalación de ruby y proseguimos con la configuración para la instalación de Ruby on Rails, comenzamos con la instalación de *“blunder”* que es una herramienta para la instalación de dependencias de Rails, esto por medio de la siguiente línea de comando:
-```*gem install bundler*```
-Se define un entorno virtual de instalación por medio de la línea de comando:
-```*gem env home*```
-Finalizada la configuración previa se procede con la instalación de Ruby on Rails con la siguiente línea:
-```*gem install rails -v 5.2.0*```
-Se puede definir la versión a usar, como se muestra anteriormente, o simplemente instalar la version mas reciente, asi:
-```*gem install rails*```
-*rbenv* funciona creando un directorio de *“shims”*, que apuntan a los archivos utilizados por la versión de Ruby que está habilitada actualmente. A través del subcomando rehash, rbenv mantiene *“shims”* en ese directorio para que coincida con cada comando de Ruby en todas las versiones instaladas de Ruby en su servidor. Siempre que instales una nueva versión de Ruby o una gema que proporcione comandos, como lo hace Rails, debes ejecutar:
-```*rbenv rehash*```
-Se verifica la instalación de rails por medio del comando:
-```*rails -v*```
-Es necesario instalar Node, por lo que usamos los siguientes comandos:
-```*sudo apt install nodejs*```
-A continuación ejecutamos los siguientes comandos para instalar *sqlite3* y poder usar una base de datos 
-```*sudo apt-get install libsqlite3-dev*```
-```*gem install sqlite3 -v 1.3.11*```
-Ahora creamos una carpeta y ejecutamos el comando *rails new apiYoutube --api* para crear la estructura correspondiente del proyecto y quedará listo para usarlo como una API.
-![](img_README/4.png)
-Realizamos una prueba para ver si el servidor está funcionando. Para esto ejecutamos 
-```*rails server*```
-![](img_README/5.png)
-Al entrar al localhost debe verse algo como esto:
-![](img_README/6.png)
+Lo primero que debemos hacer es instalar el entorno virtual ejecutando los siguientes comandos en la terminal:  
+Se actualiza la máquina por medio de la línea de comando:  
+*```sudo apt update```*  
+Posterior a esto se instalan las dependencias requeridas para la instalación de Ruby  
+*```sudo apt install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm5 libgdbm-dev```*  
+Para la instalación de Ruby se presentan dos opciones que son *“rbenv”* y *“rvm”*, en este caso optamos por *“rbenv”* por lo cual nos ubicamos dentro de la carpeta y clonamos el repositorio de git con el comando:  
+*```git clone https://github.com/rbenv/rbenv.git ~/.rbenv```*  
+Agregamos la dirección de la carpeta *~/.rbenv/bin* a nuestras variables de entorno por medio de la línea de comando:  
+*```echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc```*  
+Se agrega el comando eval *"$(rbenv init -)"* al archivo *~/.bashrc* para que *rbenv* cargue automáticamente:  
+*```echo 'eval "$(rbenv init -)"' >> ~/.bashrc```*  
+Se aplican los cambios con el comando:  
+*```source ~/.bashrc```*  
+Se verifica si *“rbenv”* se encuentra instalado por medio de la línea de comando:  
+*```type rbenv```*  
+Se instala desde git *“ruby-build”* para simplificar la instalación de las versiones de ruby por medio del comando *“rbenv”*  
+*```git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build```*  
+Finalizada la configuración del comando *“rbenv”* proseguimos con la instalación de Ruby, para eso utilizamos el siguiente comando que nos enlista las distintas versiones disponibles de Ruby:  
+*```rbenv install -l```*  
+![](img_README/1.png)  
+Se escoge la versión más reciente y se usa la línea de comando presentada a continuación, variando el número de la versión a utilizar:  
+*```rbenv install 2.6.5```*  
+![](img_README/2.png)  
+Se define la versión instalada como la versión a utilizar en la máquina:  
+*```rbenv global 2.6.5```*  
+Para verificar la instalación de la versión escogida se hace uso de la línea de comando:  
+*```ruby -v```*  
+![](img_README/3.png)  
+Con este proceso se puede dar por terminada la instalación de ruby y proseguimos con la configuración para la instalación de Ruby on Rails, comenzamos con la instalación de *“blunder”* que es una herramienta para la instalación de dependencias de Rails, esto por medio de la siguiente línea de comando:  
+*```gem install bundler```*  
+Se define un entorno virtual de instalación por medio de la línea de comando:  
+*```gem env home```*  
+Finalizada la configuración previa se procede con la instalación de Ruby on Rails con la siguiente línea:  
+*```gem install rails -v 5.2.0```*  
+Se puede definir la versión a usar, como se muestra anteriormente, o simplemente instalar la version mas reciente, asi:  
+*```gem install rails```*  
+*rbenv* funciona creando un directorio de *“shims”*, que apuntan a los archivos utilizados por la versión de Ruby que está habilitada actualmente. A través del subcomando rehash, rbenv mantiene *“shims”* en ese directorio para que coincida con cada comando de Ruby en todas las versiones instaladas de Ruby en su servidor. Siempre que instales una nueva versión de Ruby o una gema que proporcione comandos, como lo hace Rails, debes ejecutar:  
+*```rbenv rehash```*  
+Se verifica la instalación de rails por medio del comando:  
+*```rails -v```*  
+Es necesario instalar Node, por lo que usamos los siguientes comandos:  
+*```sudo apt install nodejs```*  
+A continuación ejecutamos los siguientes comandos para instalar *sqlite3* y poder usar una base de datos  
+*```sudo apt-get install libsqlite3-dev```*  
+*```gem install sqlite3 -v 1.3.11```*  
+Ahora creamos una carpeta y ejecutamos el comando *rails new apiYoutube --api* para crear la estructura correspondiente del proyecto y quedará listo para usarlo como una API.  
+![](img_README/4.png)  
+Realizamos una prueba para ver si el servidor está funcionando. Para esto ejecutamos   
+*```rails server```*  
+![](img_README/5.png)  
+Al entrar al localhost debe verse algo como esto:  
+![](img_README/6.png)  
 # 2. Generando la llave de la API de YouTube
 Es necesario tener una cuenta de google para realizar el siguiente paso, en el que se debe entrar a la consola de la API, para esto ingresamos a *code.google.com/apis/console*. Se le da clic a crear proyecto. En nuestro caso el nombre que se le asignó al proyecto fue “Api de Youtube” . Posteriormente, seleccionamos el proyecto creado.
 A continuación en el menú de la derecha seleccionamos *“biblioteca”* y buscamos la api de youtube que necesitamos, como se muestra a continuación.
