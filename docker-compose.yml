@@ -35,22 +35,37 @@ services:
       - 80:80
   influxdb:
     image: influxdb
-    restart: always
+    environment:
+      - INFLUXDB_DB=telegraf
+      - INFLUXDB_USER=telegraf
+      - INFLUXDB_USER_PASSWORD=TelegrafPassword
+    volumes:
+      - influxdb:/var/lib/influxdb
     ports:
       - 8086:8086
+
+  telegraf:
+    image: telegraf
     volumes:
-      - influxdb-volume:/var/lib/influxdb
+      - ~/ArcSoft2p2019/monitoring/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
+    links:
+      - influxdb
+
   grafana:
     image: grafana/grafana
-    restart: always
+    environment:
+      - GF_SERVER_ROOT_URL=https://grafana.example.com
+      - GF_SECURITY_ADMIN_PASSWORD=GrafanaPassword
+      - GF_INSTALL_PLUGINS=grafana-clock-panel,grafana-simple-json-datasource,grafana-worldmap-panel,raintank-worldping-app,jdbranham-diagram-panel
+      - GF_USERS_ALLOW_SIGN_UP=false
+      - GF_SECURITY_DISABLE_GRAVATAR=true
+      - GF_SERVER_DOMAIN=example.com
+    volumes:
+      - grafana:/var/lib/grafana
     ports:
       - 3000:3000
-    volumes:
-      - grafana-volume:/var/lib/grafana
 
 volumes:
-  grafana-volume:
-    external: false
-  influxdb-volume:
-    external: false
+  grafana:
+  influxdb:
     
