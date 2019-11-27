@@ -1,5 +1,5 @@
-#FROM nginx
-#EXPOSE 80
+FROM nginx
+EXPOSE 80
 #Depending on the operating system of the host machines(s) that will build or run the containers, the image specified in the FROM statement may need to be changed.
 #FROM mcr.microsoft.com/dotnet/core/aspnet:3.0-nanoserver-1903 AS base
 #WORKDIR /app
