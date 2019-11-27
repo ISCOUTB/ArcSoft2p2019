@@ -17,9 +17,9 @@ docker run -p 8081:80 image_name
 
 Open the browser, in the navigation bar place http://localhost:8081 and we will see the available routes.
 ```
-User: /twitter/user/
+User: /user/
 
-Posts: /twitter/posts/
+Posts: /posts/
 ```
 ### Dependencies
 These are the [modules](https://github.com/IngenieriaDeSistemasUTB/ArcSoft2p2019/blob/master/twitter/requirements.txt) necessary for the application to work properly, it is NOT necessary to install them on our own since Docker does it for us.
@@ -76,13 +76,13 @@ These are the available routes:
 We obtain the username and return the information associated with it.
 
 ```
-/twitter/user/<username>
+/user/<username>
 ```
 
 Example:
 
 ```
-curl -X "http://localhost:8081/twitter/user/Aztrarok"
+curl -X "http://localhost:8081/user/Aztrarok"
 ```
 ```
 {
@@ -99,13 +99,13 @@ curl -X "http://localhost:8081/twitter/user/Aztrarok"
 We obtain the information of the last 5 publications made by the user
 
 ```
-/twitter/posts/<number>
+/posts/<number>
 ```
 
 Example:
 
 ```
-curl -X "http://localhost:8081/twitter/posts/"
+curl -X "http://localhost:8081/posts/"
 ```
 ```
 [
