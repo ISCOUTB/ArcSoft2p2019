@@ -41,7 +41,7 @@ namespace WebApplication1.Controllers
 
             var query = collection.AsQueryable<Reservation>();
             var result = from n in query
-                         where n.Username == "t00045753"
+                         where n.username == Usuario
                          select n;
 
            if(!result.Any()){
