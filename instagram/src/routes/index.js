@@ -59,30 +59,36 @@ router.get('/logout',(req,res)=>{
     res.redirect('/')
     
 })
-router.get('/instagram/user',async (req,res)=>{
+router.get('/user',async (req,res)=>{
     //trabajar con endpoints
     const profileData= await instagram.get('users/self');
     const media= await instagram.get('users/self/media/recent');
 
-    let id = profileData.data.id;
-    let username = profileData.data.username;
-    let followers = profileData.data.counts.followed_by;
-    let post = profileData.data.counts.media;
-    let fullname= profileData.data.full_name;
+    let id_ = profileData.data.id;
+    let username_ = profileData.data.username;
+    let followers_ = profileData.data.counts.followed_by;
+    let post_ = profileData.data.counts.media;
+    let fullname_= profileData.data.full_name;
+
+    let ID= id_.toString();
+    let username = username_.toString();
+    let followers = followers_.toString();
+    let post = post_.toString();
+    let fullname = fullname_.toString();
 
     res.json({
-            ok:true,
-            id,
-            username,
+            ID,
             followers,
+            fullname,
             post,
-            fullname
+            username
+            
     });
 
 });
 
 //post
-router.get('/instagram/post',async (req,res)=>{
+router.get('/posts',async (req,res)=>{
 
     //Parametros opcionales
 
@@ -96,6 +102,8 @@ router.get('/instagram/post',async (req,res)=>{
     const profileData= await instagram.get('users/self');
     const media= await instagram.get('users/self/media/recent');
 
+
+    console.log(media.data)
     //número de seguidores
     let followers = profileData.data.counts.followed_by;
     //id del usuario 
@@ -104,19 +112,41 @@ router.get('/instagram/post',async (req,res)=>{
     let media_= media.data;
 
 
+
     var data= [];
     for(let i=0; i<media_.length;i++){
         
-        let id = media_[i].id;
-        let user= media_[i].user.id;
-        let likes = media_[i].likes.count;
-        var eficiencia = (likes / followers) * 100;
-        data.push({eficiencia,id,likes,user});
+        let id_ = media_[i].id;
+        let ID = id_;
+        let user= media_[i].user.username;
+        let likes_ = media_[i].likes.count;
 
-        var info_ = data.map(person => ({id:person.id, user:person.user, likes:person.likes, eficiencia:person.eficiencia}));
+        //likes to string
+        let likes = likes_.toString();
+        var eficiencia_ = (likes_ / followers) * 100;
+
+        var eficiencia = eficiencia_.toFixed(4);
+        var date_ = media_[i].created_time;
+        
+        var a = new Date(date_ * 1000);
+        //var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+        var months = ['1','2','3','4','5','6','7','8','9','10','11','12'];
+        var year = a.getFullYear();
+        var month = months[a.getMonth()];
+        var date__ = a.getDate();
+        var hour = a.getHours();
+        var min = a.getMinutes();
+        var sec = a.getSeconds();
+        //var time = date__ + '-' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
+        var date= year + '-'+month+ '-' + date__ + ' ' + hour+ ':' + min + ':' + sec;
+        data.push({eficiencia,ID,likes,user,date});
+
+
+        var info_ = data.map(person => ({ID:person.ID, user:person.user, likes:person.likes, eficiencia:person.eficiencia,date:person.date}));
         var info = info_.slice(15,20);
-    
     }
+
+   
 
     return res.json(
         info
