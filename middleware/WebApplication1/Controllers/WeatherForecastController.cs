@@ -45,11 +45,16 @@ namespace WebApplication1.Controllers
                          select n;
 
            if(!result.Any()){
-                var Client = new WebClient().DownloadString("https://aonobird.aztrarok.repl.co/twitter/user/" + Usuario);
+               var Client = new WebClient().DownloadString("https://aonobird.aztrarok.repl.co/user/Rubiu5");
                 var documents = BsonSerializer.Deserialize<Reservation>(Client);
-                collection.InsertOne(documents);
-
-                return documents;
+                var Posts = new WebClient().DownloadString("https://aonobird.aztrarok.repl.co/posts/");
+                IList<Postation> posts = BsonSerializer.Deserialize<IList<Postation>>(Posts);
+        
+                //collection.InsertOne(documents);
+                List<object> lista = new List<object>();
+                lista.Add(documents);
+                lista.Add(posts);
+                return lista;
             }
            return Ok(result);
 
