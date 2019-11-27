@@ -42,16 +42,21 @@ namespace WebApplication1.Controllers
 
             var query = collection.AsQueryable<Reservation>();
             var result = from n in query
-                         where n.username == Usuario
+                         where n.username == "Rubiu5"
                          select n;
+            /*
+            var queryPosts = collectionPosts.AsQueryable<Postation>();
+            var resultPost = from t in queryPosts
+                             where t.user == "Rubiu5"
+                             select t;
+            
+            */
 
            if(!result.Any()){
                var Client = new WebClient().DownloadString("https://aonobird.aztrarok.repl.co/user/Rubiu5");
                 var documents = BsonSerializer.Deserialize<Reservation>(Client);
                 var Posts = new WebClient().DownloadString("https://aonobird.aztrarok.repl.co/posts/");
                 IList<Postation> posts = BsonSerializer.Deserialize<IList<Postation>>(Posts);
-        
-                //collection.InsertOne(documents);
                 List<object> lista = new List<object>();
                 lista.Add(documents);
                 lista.Add(posts);
