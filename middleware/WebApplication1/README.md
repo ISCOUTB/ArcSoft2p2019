@@ -17,17 +17,21 @@ docker run [Image name]
 ### Dependencies
 The [requirements](https://github.com/IngenieriaDeSistemasUTB/ArcSoft2p2019/blob/master/middleware/WebApplication1/requirements.txt) needed to execute the api as it's supposed to be are:
 *Dotnet 3.0
+### Data from apis
 #### User data from apis
 ```
 _id, followers, fullname, ID, post, username
 ```
 
-##### Post data from apis
+#### Post data from apis
 ```
 _id, ID, efficiency, likes, username
 ```
 
-###### Dashboard data
+### Dashboard data
 ```
 _id, followers, fullname, ID, post, username, efficiency, likes
 ```
+## Database implementation on mongoDB
+The database is implemented on mongo atlas service, with a free account(for testing), is named RedSocial, with six collections as shown on the image.
+![DB image](https://github.com/IngenieriaDeSistemasUTB/ArcSoft2p2019/blob/master/middleware/DBIMAGE.png)
