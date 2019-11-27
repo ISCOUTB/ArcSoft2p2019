@@ -32,7 +32,8 @@ namespace WebApplication1.Controllers
             string RedSocial = HttpContext.Request.Query["RedSocial"];
             var Servidor = new MongoClient("mongodb://RedSocial:3015665692@redsocial-shard-00-00-ouis9.mongodb.net:27017,redsocial-shard-00-01-ouis9.mongodb.net:27017,redsocial-shard-00-02-ouis9.mongodb.net:27017/test?ssl=true&replicaSet=RedSocial-shard-0&authSource=admin&retryWrites=true&w=majority");
             var Database = Servidor.GetDatabase("RedSocial");
-            var collection = Database.GetCollection<Reservation>(RedSocial);
+            var collection = Database.GetCollection<Reservation>("Twitter");
+            //var collectionPosts = Database.GetCollection<Postation>("Twitter");
        
 
 
@@ -54,6 +55,8 @@ namespace WebApplication1.Controllers
                 List<object> lista = new List<object>();
                 lista.Add(documents);
                 lista.Add(posts);
+                //collection.InsertOne(documents);
+                //collectionPosts.InsertMany(posts);
                 return lista;
             }
            return Ok(result);
