@@ -47,7 +47,7 @@ services:
   telegraf:
     image: telegraf
     volumes:
-      - ~/ArcSoft2p2019/monitoring/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
+      - ./monitoring/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
     links:
       - influxdb
 
