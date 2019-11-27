@@ -37,7 +37,6 @@ module Funciones
             url = $authorizer.get_authorization_url(base_url: REDIRECT_URI)
             return url
         end
-        credentials
     end
     def get_code(code)
         user_id = 'default'

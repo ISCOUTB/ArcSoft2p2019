@@ -1,11 +1,17 @@
+require 'funciones.rb'
+
+APPLICATION_NAME = 'YouTube Data API Ruby Tests'
+
 class AuthorizesController < ApplicationController
+  include Funciones 
   before_action :set_authorize, only: [:show, :update, :destroy]
 
   # GET /authorizes
   def index
-    @authorizes = Authorize.all
-
-    render json: @authorizes
+    service = Google::Apis::YoutubeV3::YouTubeService.new
+    service.client_options.application_name = APPLICATION_NAME
+    @authorize = self.authorize()
+    render body: @authorize
   end
 
   # GET /authorizes/1
