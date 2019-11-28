@@ -28,6 +28,7 @@ services:
     restart: always
     ports:
       - 8080:80
+      
   dashboard:
     build: ./dashboard
     restart: always
@@ -50,6 +51,7 @@ services:
       - ./monitoring/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
     links:
       - influxdb
+
 
   grafana:
     image: grafana/grafana
