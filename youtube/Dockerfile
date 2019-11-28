@@ -8,6 +8,8 @@ EXPOSE 80
 
 ADD . .
 WORKDIR /api
+RUN apt install yarn
+RUN npm install -g yarn
 RUN bundle install
 
 CMD ["rails", "server", "-p", "80", "-b", "0.0.0.0"]

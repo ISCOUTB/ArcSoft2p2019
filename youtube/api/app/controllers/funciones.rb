@@ -59,18 +59,18 @@ module Funciones
         response = service.list_channels(part, params).to_json
         item = JSON.parse(response).fetch("items")[0]
         string = {
-            'id'=> "#{item.fetch("id")}",
-            'username'=> "#{item.fetch("snippet").fetch("title")}",
-            'fullname'=> "#{item.fetch("snippet").fetch("title")}",
             'followers'=> "#{item.fetch("statistics").fetch("subscriberCount")}".to_i,
+            'fullname'=> "#{item.fetch("snippet").fetch("title")}",
+            'ID'=> "#{item.fetch("id")}",
             'post'=> "#{item.fetch("statistics").fetch("videoCount")}".to_i,
+            'username'=> "#{item.fetch("snippet").fetch("title")}",
         }
         json=JSON[string]
         if opcion == 0
             puts (json)
             return json  
         else
-            return string = {'id' =>"#{item.fetch("id")}", 'followers'=> "#{item.fetch("statistics").fetch("subscriberCount")}".to_i}
+            return string = {'id' =>"#{item.fetch("id")}", 'followers'=> "#{item.fetch("statistics").fetch("subscriberCount")}".to_i, 'username'=> "#{item.fetch("snippet").fetch("title")}",}
         end
     end
 
@@ -78,7 +78,7 @@ module Funciones
         response = service.list_videos(part, params).to_json
         item = JSON.parse(response).fetch("items")[0]
         string = {
-            'id'=> "#{item.fetch("id")}",
+            'ID'=> "#{item.fetch("id")}",
             'likes'=> "#{item.fetch("statistics").fetch("likeCount")}".to_i,
         }
         puts (item)
@@ -95,11 +95,13 @@ module Funciones
             item = JSON.parse(response).fetch("items")[i]
             videoIds[i]= (item.fetch("contentDetails").fetch("upload").fetch("videoId")).to_s
             video_info = videoinfo(service, "statistics", id: videoIds[i])
-            video_info['efficiency'] = (video_info.fetch('likes').to_f/channel_info.fetch('followers').to_f)*100
-            video_info['user'] = channel_info.fetch('id')
-            string[(i+1).to_s]=video_info
+            datos = Hash.new
+            datos['ID'] = video_info.fetch('ID')
+            datos['efficiency'] = ((video_info.fetch('likes').to_f/channel_info.fetch('followers').to_f)*100).to_s
+            datos['likes'] = video_info.fetch('likes').to_s
+            datos['username'] = channel_info.fetch('username')
+            string[(i+1).to_s]=datos
         end
-        puts (string)
         return JSON[string]
     end
     def search_by_username(service, part, **params)
