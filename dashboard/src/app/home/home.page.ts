@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 //import { HTTP } from '@ionic-native/http/ngx';3193755763
 import { Chart } from 'chart.js';
-import * as echarts from 'echarts';
+//import * as echarts from 'echarts';
 import { TaskService } from '../services/task.service';
 
 @Component({
