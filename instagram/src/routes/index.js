@@ -40,7 +40,7 @@ router.get('/handleauth', async (req,res)=>{
         req.session.user_id=data.user.id
         //guardar el acces token
         instagram.config.accessToken =req.session.access_token
-        res.redirect('/instagram/user')
+        res.redirect('/user')
        
       } catch (err) {
         res.json(err);
