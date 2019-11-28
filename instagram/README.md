@@ -53,7 +53,7 @@ According to [the company](https://instagram.com/about/faq/):
 - [**GET** /auth/instagram](https://github.com/IngenieriaDeSistemasUTB/ArcSoft2p2019/edit/master/instagram).
 - [**GET** /handleauth](https://github.com/IngenieriaDeSistemasUTB/ArcSoft2p2019/edit/master/instagram).
 - [**GET** /user](https://github.com/IngenieriaDeSistemasUTB/ArcSoft2p2019/edit/master/instagram).
-- [**GET** /post](https://github.com/IngenieriaDeSistemasUTB/ArcSoft2p2019/edit/master/instagram).
+- [**GET** /posts](https://github.com/IngenieriaDeSistemasUTB/ArcSoft2p2019/edit/master/instagram).
 
 example: get user 
 ```
