@@ -16,7 +16,8 @@ docker run [Image name]
 ```
 ### Dependencies
 The [requirements](https://github.com/IngenieriaDeSistemasUTB/ArcSoft2p2019/blob/master/middleware/WebApplication1/requirements.txt) needed to execute the api as it's supposed to be are:
-*Dotnet 3.0
+* Dotnet 3.0
+* Internet connection to download docker images.
 ### Data from apis
 #### User data from apis
 ```
