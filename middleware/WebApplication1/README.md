@@ -26,7 +26,7 @@ _id, followers, fullname, ID, post, username
 
 #### Post data from apis
 ```
-_id, ID, efficiency, likes, username
+_id, ID, efficiency, likes, user
 ```
 
 ### Dashboard data
