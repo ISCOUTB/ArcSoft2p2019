@@ -43,14 +43,12 @@ services:
       - influxdb:/var/lib/influxdb
     ports:
       - 8086:8086
-
   telegraf:
     image: telegraf
     volumes:
       - ./monitoring/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
     links:
       - influxdb
-
   grafana:
     image: grafana/grafana
     environment:
