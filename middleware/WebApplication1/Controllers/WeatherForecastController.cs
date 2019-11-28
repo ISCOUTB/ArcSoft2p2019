@@ -44,9 +44,9 @@ namespace WebApplication1.Controllers
                              select t;
 
            if(!result.Any()){
-                var Client = new WebClient().DownloadString("https://aonobird.aztrarok.repl.co/user/"+Usuario);
+                var Client = new WebClient().DownloadString("http://"+RedSocial+"/user/"+Usuario);
                 var documents = BsonSerializer.Deserialize<Reservation>(Client);
-                var Posts = new WebClient().DownloadString("https://aonobird.aztrarok.repl.co/posts/");
+                var Posts = new WebClient().DownloadString("http://"+RedSocial+"/posts/");
                 IList<Postation> posts = BsonSerializer.Deserialize<IList<Postation>>(Posts);
                 List<object> lista = new List<object>();
                 lista.Add(documents);
