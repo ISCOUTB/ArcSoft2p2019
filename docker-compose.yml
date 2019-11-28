@@ -24,7 +24,7 @@ services:
     ports:
       - 8085:80
   middleware:
-    build: ./middleware/WebApplication1/
+    build: ./middleware/WebApplication1
     restart: always
     ports:
       - 8080:80
