@@ -35,3 +35,6 @@ _id, followers, fullname, ID, post, username, efficiency, likes
 ## Database implementation on mongoDB
 The database is implemented on mongo atlas service, with a free account(for testing), is named RedSocial, with six collections as shown on the image.
 ![DB image](https://github.com/IngenieriaDeSistemasUTB/ArcSoft2p2019/blob/master/middleware/DBscreen.png)
+
+## Database filled with the user and their last 5 posts.
+![DB image](https://github.com/IngenieriaDeSistemasUTB/ArcSoft2p2019/blob/master/middleware/PostScreen.png)
