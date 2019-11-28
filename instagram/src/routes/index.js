@@ -13,7 +13,7 @@ router.get('/',(req,res)=>{
     res.redirect('/login');
 })
 
-const redirectUri='http://localhost:8084/handleauth'
+const redirectUri='http://18.237.128.126:8084/handleauth'
 router.get('/auth/instagram',(req,res)=>{
     res.redirect(
         instagram.getAuthorizationUrl(
