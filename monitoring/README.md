@@ -26,8 +26,13 @@ base de datos orientada a time series escrita en Go muy potente y escalable a la
 3. Configurar Grafana : Acceder y Añadir InfluxBD  
  3.1  Inicio de Sesión  
 ![DashBoard](https://user-images.githubusercontent.com/54947222/69688078-00ed2580-1093-11ea-8054-fa89483ce9bc.jpeg)
+### Home 
+![DashBoard2](https://user-images.githubusercontent.com/54947222/69688260-88d32f80-1093-11ea-9291-2367eae5785e.jpeg)
 
  3.2 Conección  con la base de datos 
+ 
+ 3.2.1 Selección Base de Datos 
+![DashBoard3](https://user-images.githubusercontent.com/54947222/69688558-67267800-1094-11ea-93ef-34d19c3eda6d.jpeg)
   Se configura la base de datos, con el fin de realizar las consultas en influxBD 
 
 ```
@@ -43,11 +48,6 @@ configuration -> data sources -> add data source
 
 ## Pruebas 
 
-### Home 
-![DashBoard2](https://user-images.githubusercontent.com/54947222/69688260-88d32f80-1093-11ea-9291-2367eae5785e.jpeg)
-
-### Selección Base de Datos 
-![DashBoard3](https://user-images.githubusercontent.com/54947222/69688558-67267800-1094-11ea-93ef-34d19c3eda6d.jpeg)
 
 ### DashBoard 
  Metricas recolectadas. 
