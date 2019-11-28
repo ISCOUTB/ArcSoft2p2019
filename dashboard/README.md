@@ -6,7 +6,7 @@ En nuestro caso usamos **Ionic** como framework de despliegue del dashboard
 
 # Ionic 
 
-![](https://github.com/IngenieriaDeSistemasUTB/ArcSoft2p2019/blob/master/dashboard/logo-ionic.png)
+<img src="https://github.com/IngenieriaDeSistemasUTB/ArcSoft2p2019/blob/master/dashboard/logo-ionic.png" width = "200">
 
 ## Installation
 
