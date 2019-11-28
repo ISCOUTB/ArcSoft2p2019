@@ -10,7 +10,7 @@ Las metricas de los distintos servicios cargados en Docker seran presentados por
 
 ## Telegraf
 
-Telegraf es un agente de servidor impulsado por complementos para recopilar e informar métricas,estos complementos pueden obtener una variedad de métricas directamente del sistema en el que se está ejecutando o extraer métricas de API de terceross, asi mismo este servicio tiene otros complementos de salida que envian métricas a una variedad de otros almacenes de datos de series temporales como InfluxDB. 
+Telegraf es un agente de servidor impulsado por complementos para recopilar e informar métricas,estos complementos pueden obtener una variedad de métricas directamente del sistema en el que se está ejecutando o extraer métricas de API de terceros, asi mismo este servicio tiene otros complementos de salida que envian métricas a una variedad de otros almacenes de datos de series temporales como InfluxDB. 
 
 ## Influxbd 
 base de datos orientada a time series escrita en Go muy potente y escalable a la hora de realizar estas operaciones.
@@ -44,7 +44,7 @@ configuration -> data sources -> add data source
 
  3.3 Añadir DashBoard 
   
-  Se importa utilizando el host 1443, estoe complementos de salida para enviar métricas a una variedad de otros almacenes de datos de series temporales como InfluxDB. 
+  Se importa utilizando el host 1443, estos complementos de salida para enviar métricas a una variedad de otros almacenes de datos de series temporales como InfluxDB. 
 
   ![DashBoard6](https://user-images.githubusercontent.com/54947222/69688572-75749400-1094-11ea-8a11-30c9164a3bec.jpeg)
 
