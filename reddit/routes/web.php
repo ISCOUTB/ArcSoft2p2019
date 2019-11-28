@@ -21,4 +21,6 @@ $router->get('/user/{id}', ['uses' => 'UserController@users']);
 
 $router->get('/datauser/{name}', ['uses' => 'UserController@data']);
 
+$router->get('/userjson/{name}', ['uses' => 'UserController@dataJson']);
+
 

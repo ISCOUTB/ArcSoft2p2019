@@ -13,7 +13,7 @@ router.get('/',(req,res)=>{
     res.redirect('/login');
 })
 
-const redirectUri='http://localhost:8084/handleauth'
+const redirectUri='http://18.237.128.126:8084/handleauth'
 router.get('/auth/instagram',(req,res)=>{
     res.redirect(
         instagram.getAuthorizationUrl(
@@ -125,7 +125,7 @@ router.get('/posts',async (req,res)=>{
         let likes = likes_.toString();
         var eficiencia_ = (likes_ / followers) * 100;
 
-        var eficiencia = eficiencia_.toFixed(4);
+        var efficiency = eficiencia_.toFixed(4);
         var date_ = media_[i].created_time;
         
         var a = new Date(date_ * 1000);
@@ -139,10 +139,10 @@ router.get('/posts',async (req,res)=>{
         var sec = a.getSeconds();
         //var time = date__ + '-' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
         var date= year + '-'+month+ '-' + date__ + ' ' + hour+ ':' + min + ':' + sec;
-        data.push({eficiencia,ID,likes,user,date});
+        data.push({efficiency,ID,likes,user,date});
 
 
-        var info_ = data.map(person => ({ID:person.ID, user:person.user, likes:person.likes, eficiencia:person.eficiencia,date:person.date}));
+        var info_ = data.map(person => ({ID:person.ID, user:person.user, likes:person.likes, efficiency:person.efficiency,date:person.date}));
         var info = info_.slice(15,20);
     }
 

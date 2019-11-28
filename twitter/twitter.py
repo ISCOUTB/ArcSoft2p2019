@@ -95,7 +95,7 @@ class Twitter:
 				t["likes"] = str(tweet.favorite_count) #Indicates approximately how many times this post has been liked by users
 				t["efficiency"] = str(round((tweet.favorite_count/tweet.user.followers_count)*100,4))#Indicates the efficiency of a post
 				t["date"] = tweet.created_at.strftime("%Y-%m-%d %H:%M:%S")
-				t["username"] = tweet.user.screen_name #The username of the user who made the publication
+				t["user"] = tweet.user.screen_name #The username of the user who made the publication
 				info.append(t)
 				k+=1
 				if k == number+1:

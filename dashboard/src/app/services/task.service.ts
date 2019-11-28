@@ -1,44 +1,34 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { HomePage } from'../home/home.page';
 import { Task } from './../interfaces/task';
+import { ClassGetter } from '@angular/compiler/src/output/output_ast';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class TaskService {
 
-  //API='https://utb.alvarhito.repl.co/';
-  //API = 'https://API.jesus132.repl.co';
- API='https://aonobird.aztrarok.repl.co/';
+ API='https://aonobird.aztrarok.';
 
   constructor(
     private http: HttpClient
   ) {}
 
-  getAllTasks() {
+  getAllTasks(u, r) {
+    console.log(u)
+    console.log(r)
+    this.API = this.API + u + r
+    console.log("--------------------------------------")
     const path = this.API;
     return this.http.get<Task>(path);
-    // this.getAllTasks1()
-    
-    // let myH = new Headers();
-    // myH.set('no-cors','*');
-
-    // const myini: RequestInit= {
-    //   method:'GET',
-    //   headers: myH
-    // };
-    //let Resq = new Request('https://utb.alvarhito.repl.co/', myini);
-    // fetch(this.API,myini).then(response => response.json()).then(json =>{
-    //   console.log(json);
-    // }) 
-
-    
-    //Para las API manejar como [] investigar sobre la interfaz
-    //return this.http.get<Task[]>(path);
-
 }
 
+getTask(id: string) {
+  const path = `${this.API}/${id}`;
+  return this.http.get<Task>(path);
+}
 
   async getAllTasks1() {
     try {

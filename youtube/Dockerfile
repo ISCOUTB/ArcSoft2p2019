@@ -12,5 +12,6 @@ RUN apt update
 RUN gem update --system
 RUN gem install bundler
 RUN bundle install
-
+RUN rails db:migrate RAILS_ENV=development
 CMD ["rails", "server", "-p", "80", "-b", "0.0.0.0"]
+
