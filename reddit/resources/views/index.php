@@ -9,21 +9,17 @@
 
     <body>
         <div class="container">
-            <form action="infor" method="POST" method="GET">
+            <form action="prueba" method="POST" method="GET">
             <div class="col align-self-center">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="col-md-8 col-md-offset-2"><br />
                     <div aling="center">
                         <div class="row justify-content-md-center" ><h1 class="text-danger">Api <?php echo $name; ?> 
                         <img src="http://www.vectorico.com/download/social_media/Reddit-Icon.png" width="125px" height="125px"></h1></div>
-                    </div>
+                    </div><hr />
                     <div class="form-group">
-                        <label for="username">Username: </label>
-                        <input class="form-control border-danger" type="text" name="nombre" placeholder="Example: jcpardo" required/><br>
-                    </div>
-                    
-                    <div class="spinner-border text-primary" role="status">
-                        <input class="btn btn-danger" type="submit" name="datos" value="Obtener Datos" />
+                        <label for="username"><h4>Para datos resumido de usuario, use la ruta:<br />'/user/{su_nombre_usuario}'</h4></label><br /><hr />
+                        <label for="username2"><h4>Para datos y eficacia de usuario, use la ruta:<br />'/datauser/{su_nombre_usuario}'</h4></label>
                     </div>
                   
             </div><br/>

@@ -18,16 +18,21 @@ class UserController extends Controller
         return view('index', ['name' => 'Reddit']);
     }
 
-    public function users()
+    public function prueba($id)
+    {
+        return "Esto muestra un producto. Recibiendo $id";
+    }
+
+    public function users($id)
     {
 
-        $me = 'Hei_San';
-        $me2 = 'radijak';
-        $me3 = 'Bitcoin';
+        $me = $id;
+        //$me2 = 'radijak';
+        //$me3 = 'Bitcoin';
 
         $url ='https://ssl.reddit.com/api/v1/access_token';
-        $clientId = '';
-        $clientSecret = '';
+        $clientId = 'OrDWl9bHpw0_eA';
+        $clientSecret = 'GUcXmPqvvQ5nZuXZnjzNNufvT8o';
 
         // post variables
         $fields = array (
@@ -54,7 +59,7 @@ class UserController extends Controller
         //var_dump($response); // access_token should be here
 
         // now get the data
-        $curl = curl_init('https://oauth.reddit.com/user/'.$me2.'/about');
+        $curl = curl_init('https://oauth.reddit.com/user/'.$me.'/about');
         curl_setopt( $curl, CURLOPT_HTTPHEADER, array('Authorization: bearer ' . $response['access_token'] ) );
         curl_setopt($curl,CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($curl,CURLOPT_USERAGENT, $userAgent);
@@ -69,15 +74,15 @@ class UserController extends Controller
         return view('info', ['ident' => $response['data']['id'],'usuario' => $response['data']['name'],'elkarma' => $response['data']['comment_karma']]);
     }
 
-    public function data()
+    public function data($name)
     {
-        $me = 'Hei_San';
-        $me2 = 'radijak';
-        $me3 = 'Bitcoin';
+        $me = $name;
+        //$me2 = 'radijak';
+        //$me3 = 'Bitcoin';
 
         $url ='https://ssl.reddit.com/api/v1/access_token';
-        $clientId = '';
-        $clientSecret = '';
+        $clientId = 'OrDWl9bHpw0_eA';
+        $clientSecret = 'GUcXmPqvvQ5nZuXZnjzNNufvT8o';
 
         // post variables
         $fields = array (
@@ -104,7 +109,7 @@ class UserController extends Controller
         //var_dump($response); // access_token should be here
 
         // now get the data
-        $curl2 = curl_init('https://oauth.reddit.com/user/'.$me2.'/about');
+        $curl2 = curl_init('https://oauth.reddit.com/user/'.$me.'/about');
         curl_setopt( $curl2, CURLOPT_HTTPHEADER, array('Authorization: bearer ' . $response2['access_token'] ) );
         curl_setopt($curl2,CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($curl2,CURLOPT_USERAGENT, $userAgent);
@@ -137,7 +142,7 @@ class UserController extends Controller
         //var_dump($response); // access_token should be here
 
         // now get the data & Authentication
-        $curl = curl_init('https://oauth.reddit.com/user/'.$me2.'/overview');
+        $curl = curl_init('https://oauth.reddit.com/user/'.$me.'/overview');
         curl_setopt( $curl, CURLOPT_HTTPHEADER, array('Authorization: bearer ' . $response['access_token'] ) );
         curl_setopt($curl,CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($curl,CURLOPT_USERAGENT, $userAgent);
