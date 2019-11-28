@@ -58,7 +58,7 @@ namespace WebApplication1.Controllers
                 List<object> listaPost = new List<object>();
                 listaPost.Add(result);
                 listaPost.Add(resultPost);
-                return Ok(listaPost);
+                return Ok(resultPost);
             }
             
            

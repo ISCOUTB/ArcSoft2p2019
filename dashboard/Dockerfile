@@ -1,12 +1,18 @@
 FROM node
 
+WORKDIR /dashboard
+
+COPY . /dashboard
+
 ENV CORDOVA_VERSION 9.0.0
+
+ENV IONIC_VERSION 5.2.3
+
+RUN npm i -g @angular/cli
 
 RUN npm i -g --unsafe-perm cordova@${CORDOVA_VERSION}
 
-
-
-ENV IONIC_VERSION 5.2.3
+RUN npm install
 
 RUN apt-get update && apt-get install -y git bzip2 openssh-client && \
     npm i -g --unsafe-perm ionic@${IONIC_VERSION} && \
@@ -16,7 +22,7 @@ RUN apt-get update && apt-get install -y git bzip2 openssh-client && \
 EXPOSE 80
 
 ENTRYPOINT ["ionic"]
-CMD ["serve", "80", "--address", "0.0.0.0"]
+CMD ["serve", "-p", "80", "--address", "0.0.0.0"]
 
 
 
