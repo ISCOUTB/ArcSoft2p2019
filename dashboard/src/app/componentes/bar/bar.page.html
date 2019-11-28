@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Bar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <div>
+        <div>
+          <div style="display: block">
+            <canvas baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [legend]="barChartLegend"
+              [chartType]="barChartType">
+            </canvas>
+          </div>
+          <button (onclick)="randomize()">Update</button>
+        </div>
+      </div>
+      
+</ion-content>

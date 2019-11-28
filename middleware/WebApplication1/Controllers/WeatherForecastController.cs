@@ -20,11 +20,6 @@ namespace WebApplication1.Controllers
     public class WeatherForecastController : ControllerBase
     {
  
-    /*
-    protected static MongoClient Cliente = new MongoClient("mongodb://RedSocial:3015665692@redsocial-shard-00-00-ouis9.mongodb.net:27017,redsocial-shard-00-01-ouis9.mongodb.net:27017,redsocial-shard-00-02-ouis9.mongodb.net:27017/test?ssl=true&replicaSet=RedSocial-shard-0&authSource=admin&retryWrites=true&w=majority");
-
-    protected static MongoDatabase database = Cliente.GetDatabase("RedSocial");
-    */
     [HttpGet]
         public object Get()
         {
@@ -32,12 +27,10 @@ namespace WebApplication1.Controllers
             string RedSocial = HttpContext.Request.Query["RedSocial"];
             var Servidor = new MongoClient("mongodb://RedSocial:3015665692@redsocial-shard-00-00-ouis9.mongodb.net:27017,redsocial-shard-00-01-ouis9.mongodb.net:27017,redsocial-shard-00-02-ouis9.mongodb.net:27017/test?ssl=true&replicaSet=RedSocial-shard-0&authSource=admin&retryWrites=true&w=majority");
             var Database = Servidor.GetDatabase("RedSocial");
-            var collection = Database.GetCollection<Reservation>("Twitter");
-            var collectionPosts = Database.GetCollection<Postation>("Twitter");
+            var collection = Database.GetCollection<Reservation>(RedSocial);
+            var collectionPosts = Database.GetCollection<Postation>(RedSocial);
        
 
-
-            //IList<Reservation> documents = BsonSerializer.Deserialize<IList<Reservation>>(Client);
            
 
             var query = collection.AsQueryable<Reservation>();
@@ -47,13 +40,13 @@ namespace WebApplication1.Controllers
                          
             var queryPosts = collectionPosts.AsQueryable<Postation>();
             var resultPost = from t in queryPosts
-                             where t.username == Usuario
+                             where t.user == Usuario
                              select t;
 
            if(!result.Any()){
-                var Client = new WebClient().DownloadString("https://aonobird.aztrarok.repl.co/user/"+Usuario);
+                var Client = new WebClient().DownloadString("http://"+RedSocial+"/user/"+Usuario);
                 var documents = BsonSerializer.Deserialize<Reservation>(Client);
-                var Posts = new WebClient().DownloadString("https://aonobird.aztrarok.repl.co/posts/");
+                var Posts = new WebClient().DownloadString("http://"+RedSocial+"/posts/");
                 IList<Postation> posts = BsonSerializer.Deserialize<IList<Postation>>(Posts);
                 List<object> lista = new List<object>();
                 lista.Add(documents);
@@ -62,7 +55,10 @@ namespace WebApplication1.Controllers
                 collectionPosts.InsertMany(posts);
                 return lista;
             }else{
-                return Ok(result);
+                List<object> listaPost = new List<object>();
+                listaPost.Add(result);
+                listaPost.Add(resultPost);
+                return Ok(listaPost);
             }
             
            

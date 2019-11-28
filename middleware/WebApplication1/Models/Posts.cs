@@ -13,7 +13,7 @@ namespace WebApplication1.Models
             public string date { get; set; }
             public string efficiency { get; set; }
             public string likes { get; set; }
-            public string username { get; set; }
+            public string user { get; set; }
         }
     
 }
