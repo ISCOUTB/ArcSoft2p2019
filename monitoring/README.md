@@ -40,7 +40,10 @@ configuration -> data sources -> add data source
 ![DashBoard3](https://user-images.githubusercontent.com/54947222/69688558-67267800-1094-11ea-93ef-34d19c3eda6d.jpeg)
   Se configura la base de datos, con el fin de realizar las consultas en influxBD 
 
- 3.2.1 Conección  con la base de datos 
+ 3.2.1 Conección  con la base de datos <br/>
+ Database: telegraf <br/>
+ User: telegraf <br/>
+ Password: TelegrafPassword <br/>
 
 ![DashBoard4](https://user-images.githubusercontent.com/54947222/69688309-af916600-1093-11ea-8735-6f9f90bc5d09.jpeg)
 
