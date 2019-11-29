@@ -1,0 +1,114 @@
+//-----------------------------------------------------
+.container {
+    margin-top: 50px;
+}
+
+.ion-padding {
+    margin-top: 40px;
+}
+
+.start {
+    text-align: center;
+}
+
+
+/* Reset */
+
+.social-buttons {
+    height: 50px;
+    margin: auto;
+    text-align: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.social-button {
+    display: inline-block;
+    background-color: #444044;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    margin: 0 3px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    opacity: .99;
+    border-radius: 100%;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.05);
+    -webkit-transition: all 0.55s cubic-bezier(0.31, -0.105, 0.43, 1.59);
+    transition: all 0.55s cubic-bezier(0.31, -0.105, 0.43, 1.59);
+}
+
+.social-button:before {
+    content: '';
+    background-color: #000;
+    width: 120%;
+    height: 120%;
+    position: absolute;
+    top: 90%;
+    left: -110%;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transition: all 0.55s cubic-bezier(0.31, -0.105, 0.43, 1.59);
+    transition: all 0.55s cubic-bezier(0.31, -0.105, 0.43, 1.59);
+}
+
+.social-button .fa {
+    font-size: 20px;
+    vertical-align: middle;
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7);
+    -webkit-transition: all 0.55s cubic-bezier(0.31, -0.105, 0.43, 1.59);
+    transition: all 0.55s cubic-bezier(0.31, -0.105, 0.43, 1.59);
+}
+
+.social-button.Instagram:before {
+    background-color: #f54291;
+}
+
+.social-button .fa {
+    color: #fff;
+}
+
+.social-button.Twitter:before {
+    background-color: #0077b5;
+}
+
+.social-button.Youtube:before {
+    background-color: #bd081c;
+}
+
+.social-button:focus:before,
+.social-button:hover:before {
+    top: -10%;
+    left: -10%;
+}
+
+.social-button:focus .fa,
+.social-button:hover .fa {
+    color: #fff;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+.social-buttons a {
+    padding: 10px;
+}
+
+.fa-instagram:hover {
+    color: #C13584;
+}
+
+.fa-youtube:hover {
+    color: red;
+}
+
+.fa-twitter:hover {
+    color: #00acee
+}
+
+.fa-reddit:hover {
+    color: #FF5700;
+}

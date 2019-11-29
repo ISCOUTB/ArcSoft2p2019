@@ -148,7 +148,7 @@ class UserController extends Controller
         curl_close($curl);
 
         $response = json_decode($response, true);
-        var_dump($response);
+        //var_dump($response);
         //The last 5 posts
         $p1 = $response['data']['children']['0']['data']['link_title'];
         $p2 = $response['data']['children']['1']['data']['link_title'];

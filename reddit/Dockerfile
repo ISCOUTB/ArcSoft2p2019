@@ -7,4 +7,4 @@ RUN apt-get update && apt-get install -y zlib1g-dev zip && docker-php-ext-instal
 EXPOSE 80
 
 #run server on docker
-CMD php -S 0.0.0.0:8000 -t public
+

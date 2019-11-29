@@ -1,3 +1,67 @@
-<ion-app>
-  <ion-router-outlet></ion-router-outlet>
-</ion-app>
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="container text-center col-8 ">
+        <h1>DASHBOARD</h1>
+        <hr>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Usuario</span>
+            </div>
+            <input #Termino type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+        <h1>{{Termino.value}}</h1>
+        <h1>{{Redd}}</h1>
+    </div>
+    <div class="social-buttons">
+        <a (click)="IonRed('Instagram')">
+            <i class="fab fa-instagram fa-5x"></i>
+        </a>
+        <a (click)="IonRed('youtube')">
+            <i class="fab fa-youtube fa-5x"></i>
+        </a>
+        <a (click)="IonRed('twitter')">
+            <i class="fab fa-twitter fa-5x"></i>
+        </a>
+        <a (click)="IonRed('reddit')">
+            <i class="fab fa-reddit fa-5x"></i>
+
+        </a>
+    </div>
+
+
+    <div class="ion-padding">
+        <canvas id="myChart1" width="400" height="200" background-color: #444040></canvas>
+    </div>
+    <div class="start">
+        <button type="button" class="btn btn-danger btn-lg" (click)="getAllTasks(Termino.value, Redd)">Start</button>
+    </div>
+    <hr>
+</body>
+
+</html>
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->

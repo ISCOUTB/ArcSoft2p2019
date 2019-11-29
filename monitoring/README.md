@@ -21,25 +21,30 @@ base de datos orientada a time series escrita en Go muy potente y escalable a la
 
 ### Instalación 
 
-1. Desplegar:  se montara Grafana, Telegraf e Influxbd sobre docker y se despliega con docker compose. (https://blog.ichasco.com/tig-graficar-metricas-de-hosts-y-docker-con-telegraf-influxdb-y-grafana/)
-2. Configurar Telegraf: Crea carpeta y y fichero , añadiendo en este la configuración [Guia] (https://blog.ichasco.com/tig-graficar-metricas-de-hosts-y-docker-con-telegraf-influxdb-y-grafana/)
+1. (Ya configurado) Desplegar:  se montara Grafana, Telegraf e Influxbd sobre docker y se despliega con docker compose. (https://blog.ichasco.com/tig-graficar-metricas-de-hosts-y-docker-con-telegraf-influxdb-y-grafana/)
+2. (Ya configurado) Configurar Telegraf: Crea carpeta y y fichero , añadiendo en este la configuración [Guia] (https://blog.ichasco.com/tig-graficar-metricas-de-hosts-y-docker-con-telegraf-influxdb-y-grafana/)
 3. Configurar Grafana : Acceder y Añadir InfluxBD  
- 3.1  Inicio de Sesión 
- usuario: admin
+ 3.1 Se accede al puerto 3000 y se inicia Sesión<br/>
+ usuario: admin<br/>
  contraseña: GrafanaPassword
+ 
 ![DashBoard](https://user-images.githubusercontent.com/54947222/69688078-00ed2580-1093-11ea-8054-fa89483ce9bc.jpeg)
 ### Home 
 ![DashBoard2](https://user-images.githubusercontent.com/54947222/69688260-88d32f80-1093-11ea-9291-2367eae5785e.jpeg)
 
- 3.2 Conección  con la base de datos 
  
- 3.2.1 Selección Base de Datos 
-![DashBoard3](https://user-images.githubusercontent.com/54947222/69688558-67267800-1094-11ea-93ef-34d19c3eda6d.jpeg)
-  Se configura la base de datos, con el fin de realizar las consultas en influxBD 
-
+ 3.2 Selección Base de Datos 
 ```
 configuration -> data sources -> add data source 
 ```
+![DashBoard3](https://user-images.githubusercontent.com/54947222/69688558-67267800-1094-11ea-93ef-34d19c3eda6d.jpeg)
+  Se configura la base de datos, con el fin de realizar las consultas en influxBD 
+
+ 3.2.1 Conección  con la base de datos <br/>
+ Database: telegraf <br/>
+ User: telegraf <br/>
+ Password: TelegrafPassword <br/>
+
 ![DashBoard4](https://user-images.githubusercontent.com/54947222/69688309-af916600-1093-11ea-8735-6f9f90bc5d09.jpeg)
 
  3.3 Añadir DashBoard 
