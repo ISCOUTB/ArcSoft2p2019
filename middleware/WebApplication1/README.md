@@ -1,4 +1,42 @@
 # WebApplication1(Middleware)
+Middleware is a multi-purpose system that assists an application to interact or communicate with other applications, or software packages, networks, hardware or operating systems.
+
+### Dependencies
+* Mongo DB
+* .Net Core SDk 3.0
+* Internet connection to download docker images.
+
+## Installation
+We installed the .NET Core SDK 3.0 from https://dotnet.microsoft.com/download/dotnet-core/3.0
+with SDK 3.0 you can run any netcore application to date with the command:
+`dotnet run`
+
+## Database
+Then we created a database in Mongo Atlas to store the APIS data.
+![DB image](https://github.com/IngenieriaDeSistemasUTB/ArcSoft2p2019/blob/master/middleware/colecciones.png)
+within mongo atlas we have a collection for each API where each data returned by the APIS will be saved.
+**Note:** the database would serve as a cache in case you type a user that has been previously searched.
+
+## How it works
+### Structure of user data from apis
+```
+_id, followers, fullname, ID, post, username
+```
+
+#### Structure of post data from apis
+```
+_id, ID, efficiency, likes, user
+```
+
+### Dashboard data
+```
+_id, followers, fullname, ID, post, username, efficiency, likes
+```
+## Consults
+when making the query to the database if it finds the user inside it returns to the dashboard showing the information of the user.
+![DB image](https://github.com/IngenieriaDeSistemasUTB/ArcSoft2p2019/blob/master/middleware/consulta.png)
+
+
 ## Docker
 [Docker](https://www.docker.com/why-docker) is a tool to create isolated enviroments to develop different types of applications.
 
@@ -14,28 +52,3 @@ To deploy the api
 ```
 docker run [Image name]
 ```
-### Dependencies
-The [requirements](https://github.com/IngenieriaDeSistemasUTB/ArcSoft2p2019/blob/master/middleware/WebApplication1/requirements.txt) needed to execute the api as it's supposed to be are:
-* Dotnet 3.0
-* Internet connection to download docker images.
-### Data from apis
-#### User data from apis
-```
-_id, followers, fullname, ID, post, username
-```
-
-#### Post data from apis
-```
-_id, ID, efficiency, likes, user
-```
-
-### Dashboard data
-```
-_id, followers, fullname, ID, post, username, efficiency, likes
-```
-## Database implementation on mongoDB
-The database is implemented on mongo atlas service, with a free account(for testing), is named RedSocial, with six collections as shown on the image.
-![DB image](https://github.com/IngenieriaDeSistemasUTB/ArcSoft2p2019/blob/master/middleware/DBscreen.png)
-
-## Database filled with the user and their last 5 posts.
-![DB image](https://github.com/IngenieriaDeSistemasUTB/ArcSoft2p2019/blob/master/middleware/PostScreen.png)
