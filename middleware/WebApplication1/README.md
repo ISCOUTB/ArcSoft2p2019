@@ -30,17 +30,17 @@ We consult the user to the API, after this when we get it we store the informati
 
 #### Structure of user data from apis
 ```
-_id, followers, fullname, ID, post, username
+followers, fullname, ID, post, username
 ```
 
 #### Structure of post data from apis
 ```
-_id, ID, efficiency, likes, user
+ID, efficiency, likes, user
 ```
 
 #### Dashboard data
 ```
-_id, followers, fullname, ID, post, username, efficiency, likes
+followers, fullname, ID, post, username, efficiency, likes
 ```
 
 ## Docker
