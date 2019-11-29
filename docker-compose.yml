@@ -9,8 +9,6 @@ services:
   youtube:
     build: ./youtube
     restart: on-failure
-    environment:
-      - RAILS_ENV=production
     ports:
       - 8083:80
   instagram:
