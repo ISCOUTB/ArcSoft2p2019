@@ -18,11 +18,6 @@ class UserController extends Controller
         return view('index', ['name' => 'Reddit']);
     }
 
-    public function prueba($id)
-    {
-        return "Esto muestra un producto. Recibiendo $id";
-    }
-
     public function users($id)
     {
 
@@ -31,8 +26,8 @@ class UserController extends Controller
         //$me3 = 'Bitcoin';
 
         $url ='https://ssl.reddit.com/api/v1/access_token';
-        $clientId = 'OrDWl9bHpw0_eA';
-        $clientSecret = 'GUcXmPqvvQ5nZuXZnjzNNufvT8o';
+        $clientId = '';
+        $clientSecret = '';
 
         // post variables
         $fields = array (
@@ -82,8 +77,8 @@ class UserController extends Controller
         // BalthazarBulldozer - nothing_to_feel_here
 
         $url ='https://ssl.reddit.com/api/v1/access_token';
-        $clientId = 'OrDWl9bHpw0_eA';
-        $clientSecret = 'GUcXmPqvvQ5nZuXZnjzNNufvT8o';
+        $clientId = '';
+        $clientSecret = '';
 
         // post variables
         $fields = array (
@@ -193,8 +188,8 @@ class UserController extends Controller
         $me = $name;
 
         $url ='https://ssl.reddit.com/api/v1/access_token';
-        $clientId = 'OrDWl9bHpw0_eA';
-        $clientSecret = 'GUcXmPqvvQ5nZuXZnjzNNufvT8o';
+        $clientId = '';
+        $clientSecret = '';
 
         // post variables
         $fields = array (
