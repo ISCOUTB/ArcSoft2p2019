@@ -49,7 +49,10 @@ ID, efficiency, likes, user
 ```
 followers, fullname, ID, post, username, efficiency, likes
 ```
-
+### Communication route
+```
+/api/Datos?Usuario="ejemplo"&RedSocial="ejemplo"
+```
 ## Docker
 [Docker](https://www.docker.com/why-docker) is a tool to create isolated enviroments to develop different types of applications.
 
