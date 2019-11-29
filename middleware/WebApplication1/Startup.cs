@@ -26,7 +26,6 @@ namespace WebApplication1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,16 +35,7 @@ namespace WebApplication1
             {
                 app.UseDeveloperExceptionPage();
             }
-             app.UseCors(x =>
-            {
-                x
-                .AllowAnyOrigin()
-                .AllowAnyMethod()
-                .AllowAnyHeader()
-                .AllowCredentials();
-
-            });
-
+            
             app.UseHttpsRedirection();
 
             app.UseRouting();
