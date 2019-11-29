@@ -34,6 +34,7 @@ _id, followers, fullname, ID, post, username, efficiency, likes
 ```
 ## Consults
 when making the query to the database if it finds the user inside it returns to the dashboard showing the information of the user.
+
 ![DB image](https://github.com/IngenieriaDeSistemasUTB/ArcSoft2p2019/blob/master/middleware/consulta.png)
 
 
