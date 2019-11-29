@@ -4,6 +4,7 @@ Middleware is a multi-purpose system that assists an application to interact or 
 ### Dependencies
 * Mongo DB
 * .Net Core SDk 3.0
+* MongoDB Driver to work with netcore
 * Internet connection to download docker images.
 
 ## Installation
