@@ -33,14 +33,14 @@ When making the query to the database if it finds the user inside it returns to 
 
 ```C#
 var query = collection.AsQueryable<Reservation>();
-            var result = from n in query
-                         where n.username == Usuario
-                         select n;
+var result = from n in query
+             where n.username == Usuario
+             select n;
                          
-            var queryPosts = collectionPosts.AsQueryable<Postation>();
-            var resultPost = from t in queryPosts
-                             where t.user == Usuario
-                             select t;
+var queryPosts = collectionPosts.AsQueryable<Postation>();
+var resultPost = from t in queryPosts
+                 where t.user == Usuario
+                 select t;
 ```
 ## How it works
 We consult the user to the API, after this when we get it we store the information in the database and return it to the Dashboard in the following way:
