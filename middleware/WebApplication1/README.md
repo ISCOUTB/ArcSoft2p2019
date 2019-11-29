@@ -9,17 +9,19 @@ Middleware is a multi-purpose system that assists an application to interact or 
 ## Installation
 We installed the .NET Core SDK 3.0 from https://dotnet.microsoft.com/download/dotnet-core/3.0,
 with SDK 3.0 you can run any netcore application to date with the command:
+
 `dotnet run`
 
 ## Database
 We created a database in Mongo Atlas to store the APIS data.
 ![DB image](https://github.com/IngenieriaDeSistemasUTB/ArcSoft2p2019/blob/master/middleware/colecciones.png)
+
 within mongo atlas we have a collection for each API where each data returned by the APIS will be saved.
 
 **NOTE:** the database would serve as a cache in case you type a user that has been previously searched.
 
 ## Consults
-when making the query to the database if it finds the user inside it returns to the dashboard showing the information of the user.
+When making the query to the database if it finds the user inside it returns to the dashboard showing the information of the user.
 
 ![DB image](https://github.com/IngenieriaDeSistemasUTB/ArcSoft2p2019/blob/master/middleware/consulta.png)
 
