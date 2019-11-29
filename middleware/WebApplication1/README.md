@@ -12,6 +12,9 @@ with SDK 3.0 you can run any netcore application to date with the command:
 
 `dotnet run`
 
+## Documentation
+Documentation is available at: https://docs.microsoft.com/en-us/dotnet/
+
 ## Database
 We created a database in Mongo Atlas to store the APIS data.
 ![DB image](https://github.com/IngenieriaDeSistemasUTB/ArcSoft2p2019/blob/master/middleware/colecciones.png)
