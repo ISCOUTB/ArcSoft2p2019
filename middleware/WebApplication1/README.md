@@ -23,7 +23,7 @@ within mongo atlas we have a collection for each API where each data returned by
 
 **NOTE:** the database would serve as a cache in case you type a user that has been previously searched.
 
-## Consults
+## Queries
 When making the query to the database if it finds the user inside it returns to the dashboard showing the information of the user.
 
 ![DB image](https://github.com/IngenieriaDeSistemasUTB/ArcSoft2p2019/blob/master/middleware/consulta.png)
