@@ -20,6 +20,9 @@ We created a database in Mongo Atlas to store the APIS data.
 ![DB image](https://github.com/IngenieriaDeSistemasUTB/ArcSoft2p2019/blob/master/middleware/colecciones.png)
 
 within mongo atlas we have a collection for each API where each data returned by the APIS will be saved.
+connection to the database found in mongo atlas:
+
+`var Servidor = new MongoClient("database connection")`
 
 **NOTE:** the database would serve as a cache in case you type a user that has been previously searched.
 
