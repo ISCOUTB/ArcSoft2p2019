@@ -8,47 +8,54 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 </head>
+
 <body>
 
     <div class="container text-center col-8 ">
+        <h1>DASHBOARD</h1>
+        <hr>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">Usuario</span>
+                <span class="input-group-text" id="basic-addon1">Usuario</span>
             </div>
             <input #Termino type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
-          </div>
-          <h1>{{Termino.value}}</h1>
-          <h1>{{Redd}}</h1>
-      </div>
-      <div class="social-buttons">
-          <a class="social-button Instagram" (click)="IonRed('Instagram')">
-              <!--  href="https://www.youtube.com/"   <i class="fa fa-Youtube"> <ion-icon name="logo-instagram"></ion-icon> </i> -->
-          </a>
-          <a class="social-button Youtube" (click)="IonRed('youtube')"> 
-              <!-- <i class="fa fa-Youtube"> <ion-icon name="logo-youtube"></ion-icon> </i> -->
-          </a>
-          <a class="social-button Twitter" (click)="IonRed('twitter')">
-            <!-- <i class="fa fa-Twitter"> <ion-icon name="logo-twitter"></ion-icon> </i> -->
-          </a>
-          <a class="social-button R" (click)="IonRed('reddit')">
-              <!-- <i class="fa fa-R"> <ion-icon name="logo-reddit"></ion-icon> </i> -->
-            </a>
-      </div>
+        </div>
+        <h1>{{Termino.value}}</h1>
+        <h1>{{Redd}}</h1>
+    </div>
+    <div class="social-buttons">
+        <a (click)="IonRed('Instagram')">
+            <i class="fab fa-instagram fa-5x"></i>
+        </a>
+        <a (click)="IonRed('youtube')">
+            <i class="fab fa-youtube fa-5x"></i>
+        </a>
+        <a (click)="IonRed('twitter')">
+            <i class="fab fa-twitter fa-5x"></i>
+        </a>
+        <a (click)="IonRed('reddit')">
+            <i class="fab fa-reddit fa-5x"></i>
 
-      
-  <div class="ion-padding" >
-    <canvas id="myChart1" width="400" height="200" background-color: #444040></canvas>
-  </div> 
-  <div class="start">
-    <button  color="danger" (click)="getAllTasks(Termino.value, Redd)">Start</button>
-  </div>
+        </a>
+    </div>
+
+
+    <div class="ion-padding">
+        <canvas id="myChart1" width="400" height="200" background-color: #444040></canvas>
+    </div>
+    <div class="start">
+        <button type="button" class="btn btn-danger btn-lg" (click)="getAllTasks(Termino.value, Redd)">Start</button>
+    </div>
+    <hr>
 </body>
+
 </html>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
@@ -58,5 +65,3 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-

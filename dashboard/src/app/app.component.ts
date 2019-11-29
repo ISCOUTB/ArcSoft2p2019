@@ -14,7 +14,7 @@ export class AppComponent {
     labels: [],
     datasets: [{
       data: [],
-      label: 'Energia',
+      label: 'Datos',
       backgroundColor: '#0673d821',//NbColorHelper.hexToRgbA(colors.primary, 0.3),
       borderColor: '#3366ff'
     },
