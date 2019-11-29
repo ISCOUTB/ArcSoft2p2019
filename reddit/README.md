@@ -49,7 +49,7 @@ Lumen is a PHP micro-framework built to deliver microservices and blazing fast A
 
 ## Routes
 
-<img src="https://user-images.githubusercontent.com/36655827/69650112-1be07b00-103c-11ea-82b4-c144d51beeff.png" width="500">
+<img src="https://user-images.githubusercontent.com/36655827/69863509-00a78280-126b-11ea-9df7-f8ddcd374bf5.png" width="500">
 
 ## Examples
 
