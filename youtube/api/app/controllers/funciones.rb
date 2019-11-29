@@ -90,7 +90,7 @@ module Funciones
         x = [*0..(params.fetch(:max_results).to_i)-1]
         videoIds = Array.new((params.fetch(:max_results).to_i))
         channel_info = channels_list_by_username(service, 'snippet,contentDetails,statistics', 1, id: params.fetch(:channel_id))
-        string = Hash.new
+        string = Array.new
         for i in x do
             item = JSON.parse(response).fetch("items")[i]
             videoIds[i]= (item.fetch("contentDetails").fetch("upload").fetch("videoId")).to_s
@@ -100,9 +100,9 @@ module Funciones
             datos['efficiency'] = ((video_info.fetch('likes').to_f/channel_info.fetch('followers').to_f)*100).to_s
             datos['likes'] = video_info.fetch('likes').to_s
             datos['username'] = channel_info.fetch('username')
-            string[(i+1).to_s]=datos
+            string << datos
         end
-        return JSON[string]
+        return string.to_json()
     end
     def search_by_username(service, part, **params)
         response = service.list_searches(part, params).to_json
