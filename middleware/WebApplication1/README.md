@@ -7,18 +7,25 @@ Middleware is a multi-purpose system that assists an application to interact or 
 * Internet connection to download docker images.
 
 ## Installation
-We installed the .NET Core SDK 3.0 from https://dotnet.microsoft.com/download/dotnet-core/3.0
+We installed the .NET Core SDK 3.0 from https://dotnet.microsoft.com/download/dotnet-core/3.0,
 with SDK 3.0 you can run any netcore application to date with the command:
 `dotnet run`
 
 ## Database
-Then we created a database in Mongo Atlas to store the APIS data.
+We created a database in Mongo Atlas to store the APIS data.
 ![DB image](https://github.com/IngenieriaDeSistemasUTB/ArcSoft2p2019/blob/master/middleware/colecciones.png)
 within mongo atlas we have a collection for each API where each data returned by the APIS will be saved.
-**Note:** the database would serve as a cache in case you type a user that has been previously searched.
+**NOTE:** the database would serve as a cache in case you type a user that has been previously searched.
+
+## Consults
+when making the query to the database if it finds the user inside it returns to the dashboard showing the information of the user.
+
+![DB image](https://github.com/IngenieriaDeSistemasUTB/ArcSoft2p2019/blob/master/middleware/consulta.png)
 
 ## How it works
-### Structure of user data from apis
+We consult the user to the API, after this when we get it we store the information in the database and return it to the Dashboard in the following way:
+
+#### Structure of user data from apis
 ```
 _id, followers, fullname, ID, post, username
 ```
@@ -28,15 +35,10 @@ _id, followers, fullname, ID, post, username
 _id, ID, efficiency, likes, user
 ```
 
-### Dashboard data
+#### Dashboard data
 ```
 _id, followers, fullname, ID, post, username, efficiency, likes
 ```
-## Consults
-when making the query to the database if it finds the user inside it returns to the dashboard showing the information of the user.
-
-![DB image](https://github.com/IngenieriaDeSistemasUTB/ArcSoft2p2019/blob/master/middleware/consulta.png)
-
 
 ## Docker
 [Docker](https://www.docker.com/why-docker) is a tool to create isolated enviroments to develop different types of applications.
