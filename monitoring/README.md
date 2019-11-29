@@ -21,9 +21,8 @@ base de datos orientada a time series escrita en Go muy potente y escalable a la
 
 ### Instalación 
 
-1. (Ya configurado) Desplegar:  se montara Grafana, Telegraf e Influxbd sobre docker y se despliega con docker compose. (https://blog.ichasco.com/tig-graficar-metricas-de-hosts-y-docker-con-telegraf-influxdb-y-grafana/)
-2. (Ya configurado) Configurar Telegraf: Crea carpeta y y fichero , añadiendo en este la configuración [Guia] (https://blog.ichasco.com/tig-graficar-metricas-de-hosts-y-docker-con-telegraf-influxdb-y-grafana/)
-3. Configurar Grafana : Acceder y Añadir InfluxBD  
+1. (Ya configurado) Desplegar:  se montara Grafana, Telegraf e Influxbd sobre docker y se despliega con docker compose.
+2. (Ya configurado) Configurar Telegraf: Crea carpeta y y ficher de configuración 
  3.1 Se accede al puerto 3000 y se inicia Sesión<br/>
  usuario: admin<br/>
  contraseña: GrafanaPassword
