@@ -10,10 +10,10 @@ Las metricas de los distintos servicios cargados en Docker seran presentados por
 
 ## Telegraf
 
-Telegraf es un agente de servidor impulsado por complementos para recopilar e informar métricas,estos complementos pueden obtener una variedad de métricas directamente del sistema en el que se está ejecutando o extraer métricas de API de terceros, asi mismo este servicio tiene otros complementos de salida que envian métricas a una variedad de otros almacenes de datos de series temporales como InfluxDB. 
+Telegraf es un agente de servidor impulsado por complementos para recopilar e informar métricas, estos complementos pueden obtener una variedad de métricas directamente del sistema en el que se está ejecutando o extraer métricas de API de terceros, asi mismo este servicio tiene otros complementos de salida que envian métricas a una variedad de otros almacenes de datos de series temporales como InfluxDB. 
 
 ## Influxbd 
-base de datos orientada a time series escrita en Go muy potente y escalable a la hora de realizar estas operaciones.
+Base de datos orientada a time series escrita en Go muy potente y escalable a la hora de realizar estas operaciones.
 
 ## Grafana 
 
@@ -22,10 +22,13 @@ base de datos orientada a time series escrita en Go muy potente y escalable a la
 ### Instalación 
 
 1. (Ya configurado) Desplegar:  se montara Grafana, Telegraf e Influxbd sobre docker y se despliega con docker compose.
-2. (Ya configurado) Configurar Telegraf: Crea carpeta y y ficher de configuración 
+2. (Ya configurado) Configurar Telegraf: Crea carpeta y fichero de configuración.
+3. (Ya configurado) Configurar Grafana 
+ 
  3.1 Se accede al puerto 3000 y se inicia Sesión<br/>
- usuario: admin<br/>
- contraseña: GrafanaPassword
+ 
+  Usuario: admin<br/>
+  Contraseña: GrafanaPassword
  
 ![DashBoard](https://user-images.githubusercontent.com/54947222/69688078-00ed2580-1093-11ea-8054-fa89483ce9bc.jpeg)
 ### Home 
