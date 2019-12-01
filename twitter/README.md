@@ -1,26 +1,26 @@
 # Twitter
 
-Conditions of use for the api of extraction information .
+## Conditions of use for the api of extraction information
 
 Can:
 
-• Develop applications that automatically transmit information in Tweets, while not violating the rules of automated Tweets.
+* Develop applications that automatically transmit information in Tweets, while not violating the rules of automated Tweets.
 
-• Publish creative campaigns that automatically respond to users who interact with your content.
+* Publish creative campaigns that automatically respond to users who interact with your content.
 
-• Develop solutions that respond to users automatically in Direct Messages.
+* Develop solutions that respond to users automatically in Direct Messages.
 
-• Try new things that help people (and that comply with our rules).
+* Try new things that help people (and that comply with our rules).
 
-• Ensure that your application offers a good user experience and that it has a good performance, and verify that it continues to be so over time.
+* Ensure that your application offers a good user experience and that it has a good performance, and verify that it continues to be so over time.
 
 You can not:
 
-• Breach these or other policies. Pay special attention to our rules on abusive practices and user privacy.
+* Breach these or other policies. Pay special attention to our rules on abusive practices and user privacy.
 
-• Abuse the Twitter API or try to bypass speed limits.
+* Abuse the Twitter API or try to bypass speed limits.
 
-• Send spam or import to users, or send them any type of unsolicited messages.
+* Send spam or import to users, or send them any type of unsolicited messages.
 
 ## Docker
 [Docker](https://www.docker.com/why-docker) is a tool designed to make it easier to create, deploy, and run applications by using containers. Containers allow a developer to package up an application with all of the parts it needs, such as libraries and other dependencies, and ship it all out as one package.
