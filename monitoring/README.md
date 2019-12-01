@@ -51,6 +51,8 @@ configuration -> data sources -> add data source
 
  3.3 Añadir DashBoard 
   
+  ![import](https://user-images.githubusercontent.com/54947222/69909107-b38af400-13c3-11ea-9e48-f6bc2e4f403a.jpg)
+
   Se importa utilizando el host 1443, estos complementos de salida para enviar métricas a una variedad de otros almacenes de datos de series temporales como InfluxDB. 
 
   ![DashBoard6](https://user-images.githubusercontent.com/54947222/69688572-75749400-1094-11ea-8a11-30c9164a3bec.jpeg)
