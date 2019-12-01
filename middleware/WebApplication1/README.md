@@ -45,6 +45,11 @@ var resultPost = from t in queryPosts
 ## How it works
 We consult the user to the API, after this when we get it we store the information in the database and return it to the Dashboard in the following way:
 
+### Communication route with Dashboard
+```
+/api/Datos?Usuario="ejemplo"&RedSocial="ejemplo"
+```
+
 #### Structure of user data from apis
 ```
 followers, fullname, ID, post, username
@@ -59,10 +64,7 @@ ID, efficiency, likes, user
 ```
 followers, fullname, ID, post, username, efficiency, likes
 ```
-### Communication route
-```
-/api/Datos?Usuario="ejemplo"&RedSocial="ejemplo"
-```
+
 ## Docker
 [Docker](https://www.docker.com/why-docker) is a tool to create isolated enviroments to develop different types of applications.
 
