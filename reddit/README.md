@@ -1,5 +1,16 @@
 # Reddit
+
 <img src="https://user-images.githubusercontent.com/36655827/69597242-5235e000-0fd3-11ea-9efd-8a45c54c4543.png" width="300">
+ **Integrantes**
+* Heiner Acosta Silgado
+* Giovanny Jukopila Rueda
+* Michel MAloof Bardi 
+
+**Profesor**  
+Jairo Enrique Serrano  
+
+**Institución**  
+Universidad Tecnológica de Bolívar  
 
 ## What is reddit?
 
