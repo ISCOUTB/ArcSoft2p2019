@@ -244,7 +244,7 @@ Se obtendrá una URL como la que se muestra a continuación:
 *```https://accounts.google.com/o/oauth2/auth?access_type=offline&approval_prompt=force&client_id=947294390407-aetrkeerqf0kvtnrjmn88gn2is5e7qaa.apps.googleusercontent.com&include_granted_scopes=true&redirect_uri=http://localhost/oauth2callback&response_type=code&scope=https://www.googleapis.com/auth/youtube.readonly```*  
 Al ingresar la URL en el navegador se abrirá un pagina de autorización que finalmente nos lleva a una página como la sigue:  
 ![](img_README/auth_page.png)  
-De la URL de dicha página obtenemos la cadena de texto desde el signo igual posterior a “code” y lo ingresamos al siguiente enlace:
+De la URL de dicha página obtenemos la cadena de texto desde el signo igual posterior a “code” y lo ingresamos al siguiente enlace:  
 *```localhost:3000//authorize_codes?code=4/tgFT1PVyfGVNEJ_f3eyTORBQ8ckVXmW1G0I46KPcrCLbfsMQMF3nGr5Misk7uh2c4y8dkIQHXNW253i4Iju8Z00&scope=https://www.googleapis.com/auth/youtube.readonly```*  
 Con el cual se crearán las credenciales necesarias para el uso de la API. Si el proceso se realiza correctamente se obtendrá el siguiente mensaje:  
 *“Continue with the Application Tools”*  
