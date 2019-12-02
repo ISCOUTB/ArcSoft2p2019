@@ -20,13 +20,13 @@ Documentation is available at: https://docs.microsoft.com/en-us/dotnet/
 We created a database in Mongo Atlas to store the APIS data.
 ![DB image](https://github.com/IngenieriaDeSistemasUTB/ArcSoft2p2019/blob/master/middleware/colecciones.png)
 
-within mongo atlas we have a collection for each API where each data returned by the APIS will be saved.
+within mongo atlas we have a collection for each API where each data sent by them will be saved.
 
 connection to the database found in mongo atlas:
 
 `var Servidor = new MongoClient("database connection")`
 
-**NOTE:** the database would serve as a cache in case you type a user that has been previously searched.
+**NOTE:** the database would work as a cache in case you type a user that has been previously searched.
 
 ## Queries
 When making the query to the database if it finds the user inside it returns to the dashboard showing the information of the user.
@@ -43,7 +43,7 @@ var resultPost = from t in queryPosts
                  select t;
 ```
 ## How it works
-We consult the user to the API, after this when we get it we store the information in the database and return it to the Dashboard in the following way:
+We check the user that the dashboard ask for, in the cache(Database), if it is on the cache, we send back the data, if not, we ask to the API, after this when we get it we store the information in the database and return it to the Dashboard in the following way:
 
 ### Communication route with Dashboard
 ```
