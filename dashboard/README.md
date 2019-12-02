@@ -24,3 +24,7 @@ ng serve
 
 Se crea un componente llamado DashboardComponent, que será el núcleo de mantenerlo todo junto. Puede estilizar la plantilla de este componente como lo desee, con un solo requisito; necesitamos algún tipo de contenedor como a div para ser el marcador de posición de todas nuestras tarjetas.
 A continuación, crearemos una clase simple llamada DashboardCardque se encarga de mantener todas las propiedades a las que desea que tenga acceso la tarjeta una vez que se crea dinámicamente, así como una referencia al componente que se instanciará para la tarjeta una vez que decidamos para hacerlo Completaremos los detalles de esta clase más adelante.
+
+## Resultado final 
+
+<img src="https://github.com/IngenieriaDeSistemasUTB/ArcSoft2p2019/blob/master/dashboard/dashb.png">
