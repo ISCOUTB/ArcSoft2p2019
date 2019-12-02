@@ -1,8 +1,9 @@
 # Reddit
- **Integrantes **
- *Heiner Acosta Silgado
-*Giovanny Jukopila Rueda
-*Michel Maloof Bardi 
+
+**Integrantes**
+* Heiner Acosta Silgado
+* Giovanny Jukopila Rueda
+* Michel Maloof Bardi 
 
 **Profesor**  
 Jairo Enrique Serrano  
