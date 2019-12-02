@@ -159,6 +159,10 @@ A continuación procedemos a crear un archivo en el que almacenaremos las funcio
 En dicho archivo, creamos las siguientes funciones:  
 * **authorize**: Se encarga del proceso de petición de permisos, necesario para la utilización de la API de Youtube.  
 ![](img_README/24.png)  
+* **authorize_org**: Permite obtener las credenciales de autorización previamente creadas y verificadas.  
+![](img_README/auth_org.png)  
+* **get_code**: Recibe el código generado posterior a la autorización para poder crear las respectivas credenciales.  
+![](img_README/get_code.png)  
 * **channel_list_by_username**: Obtiene la información de un usuario, a partir de la identificación del canal.  
 ![](img_README/25.png)  
 * **videoinfo**: Obtiene la información de un video, a partir de la identificación del video.  
@@ -182,32 +186,32 @@ Para probar el funcionamiento del programa se ingresó la siguiente URL en la he
 Con este se verifica que la obtención de los números de publicaciones, que se encuentra definido por la variable *“cant”*, del canal, definido por *“username”* o *“channel_id”*, se de correctamente. Al ingresar la URL se obtiene lo siguiente:  
 ```
 {  
-    "1": {  
-        "id": "0fj7avs9k4Q",  
+    {  
+        "ID": "0fj7avs9k4Q",  
         "likes": 91,  
         "efficiency": 0.004642857142857143,  
         "user": "0fj7avs9k4Q"  
     },  
-    "2": {  
-        "id": "gO_Lurqe08M",  
+    {  
+        "ID": "gO_Lurqe08M",  
         "likes": 184,  
         "efficiency": 0.009387755102040816,  
         "user": "gO_Lurqe08M"  
     },  
-    "3": {  
-        "id": "b6bYzgsBK_I",  
+    {  
+        "ID": "b6bYzgsBK_I",  
         "likes": 14,  
         "efficiency": 0.0007142857142857143,  
         "user": "b6bYzgsBK_I"  
     },  
-    "4": {  
-        "id": "74p7a2PmKok",  
+    {  
+        "ID": "74p7a2PmKok",  
         "likes": 4,  
         "efficiency": 0.0002040816326530612,  
         "user": "74p7a2PmKok"  
     },  
-    "5": {  
-        "id": "d6jZUYjHaWI",  
+    {  
+        "ID": "d6jZUYjHaWI",  
         "likes": 7,  
         "efficiency": 0.00035714285714285714,  
         "user": "d6jZUYjHaWI"  
@@ -215,7 +219,7 @@ Con este se verifica que la obtención de los números de publicaciones, que se 
 }  
 ```  
 
-![](img_README/31.png)  
+![](img_README/post.jpg)  
 
 Proseguimos con la prueba de la información en función del nombre de usuario, por lo que ingresamos la siguiente URL:  
 *```localhost:3000/users?username=Google Developer```*  
@@ -224,15 +228,28 @@ Con este se verifica que la obtención de los números de publicaciones, que se 
 
 ```  
 {  
-    "id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",  
-    "username": "Google Developers",  
-    "fullname": "Google Developers",  
     "followers": 1960000,  
+    "fullname": "Google Developers",  
+    "ID": "UC_x5XG1OV2P6uZZ5FSM9Ttw",  
     "post": 5108  
+    "username": "Google Developers",  
 }  
 ```  
 
-![](img_README/32.png)  
+![](img_README/users.jpg)  
+
+Para realizar el proceso de autorización necesario para el funcionamiento de la API se establece una ruta que da acceso al enlace de autorización que redirige a la autorización del usuario de nuestra API por medio de su cuenta de Google. La URL a usar es la siguiente:  
+*```localhost:3000/authorizes```*  
+Se obtendrá una URL como la que se muestra a continuación:
+*```https://accounts.google.com/o/oauth2/auth?access_type=offline&approval_prompt=force&client_id=947294390407-aetrkeerqf0kvtnrjmn88gn2is5e7qaa.apps.googleusercontent.com&include_granted_scopes=true&redirect_uri=http://localhost/oauth2callback&response_type=code&scope=https://www.googleapis.com/auth/youtube.readonly```*  
+Al ingresar la URL en el navegador se abrirá un pagina de autorización que finalmente nos lleva a una página como la sigue:  
+![](img_README/auth_page.png)  
+De la URL de dicha página obtenemos la cadena de texto desde el signo igual posterior a “code” y lo ingresamos al siguiente enlace:
+*```localhost:3000//authorize_codes?code=4/tgFT1PVyfGVNEJ_f3eyTORBQ8ckVXmW1G0I46KPcrCLbfsMQMF3nGr5Misk7uh2c4y8dkIQHXNW253i4Iju8Z00&scope=https://www.googleapis.com/auth/youtube.readonly```*  
+Con el cual se crearán las credenciales necesarias para el uso de la API. Si el proceso se realiza correctamente se obtendrá el siguiente mensaje:  
+*“Continue with the Application Tools”*  
+![](img_README/continue.png)  
+Después de esto la página funciona correctamente.
 
 # BIBLIOGRAFÍA:
 https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rbenv-on-ubuntu-18-04  
