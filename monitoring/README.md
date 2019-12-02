@@ -10,10 +10,10 @@ Las metricas de los distintos servicios cargados en Docker seran presentados por
 
 ## Telegraf
 
-Telegraf es un agente de servidor impulsado por complementos para recopilar e informar métricas,estos complementos pueden obtener una variedad de métricas directamente del sistema en el que se está ejecutando o extraer métricas de API de terceros, asi mismo este servicio tiene otros complementos de salida que envian métricas a una variedad de otros almacenes de datos de series temporales como InfluxDB. 
+Telegraf es un agente de servidor impulsado por complementos para recopilar e informar métricas, estos complementos pueden obtener una variedad de métricas directamente del sistema en el que se está ejecutando o extraer métricas de API de terceros, asi mismo este servicio tiene otros complementos de salida que envian métricas a una variedad de otros almacenes de datos de series temporales como InfluxDB. 
 
 ## Influxbd 
-base de datos orientada a time series escrita en Go muy potente y escalable a la hora de realizar estas operaciones.
+Base de datos orientada a time series escrita en Go muy potente y escalable a la hora de realizar estas operaciones.
 
 ## Grafana 
 
@@ -21,12 +21,14 @@ base de datos orientada a time series escrita en Go muy potente y escalable a la
 
 ### Instalación 
 
-1. (Ya configurado) Desplegar:  se montara Grafana, Telegraf e Influxbd sobre docker y se despliega con docker compose. (https://blog.ichasco.com/tig-graficar-metricas-de-hosts-y-docker-con-telegraf-influxdb-y-grafana/)
-2. (Ya configurado) Configurar Telegraf: Crea carpeta y y fichero , añadiendo en este la configuración [Guia] (https://blog.ichasco.com/tig-graficar-metricas-de-hosts-y-docker-con-telegraf-influxdb-y-grafana/)
-3. Configurar Grafana : Acceder y Añadir InfluxBD  
+1. (Ya configurado) Desplegar:  se montara Grafana, Telegraf e Influxbd sobre docker y se despliega con docker compose.
+2. (Ya configurado) Configurar Telegraf: Crea carpeta y fichero de configuración.
+3. (Ya configurado) Configurar Grafana 
+ 
  3.1 Se accede al puerto 3000 y se inicia Sesión<br/>
- usuario: admin<br/>
- contraseña: GrafanaPassword
+ 
+  Usuario: admin<br/>
+  Contraseña: GrafanaPassword
  
 ![DashBoard](https://user-images.githubusercontent.com/54947222/69688078-00ed2580-1093-11ea-8054-fa89483ce9bc.jpeg)
 ### Home 
@@ -49,6 +51,8 @@ configuration -> data sources -> add data source
 
  3.3 Añadir DashBoard 
   
+  ![import](https://user-images.githubusercontent.com/54947222/69909107-b38af400-13c3-11ea-9e48-f6bc2e4f403a.jpg)
+
   Se importa utilizando el host 1443, estos complementos de salida para enviar métricas a una variedad de otros almacenes de datos de series temporales como InfluxDB. 
 
   ![DashBoard6](https://user-images.githubusercontent.com/54947222/69688572-75749400-1094-11ea-8a11-30c9164a3bec.jpeg)
