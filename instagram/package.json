@@ -21,7 +21,7 @@
     "mongoose": "^5.7.10",
     "morgan": "^1.9.1",
     "node-instagram": "^4.3.0",
-    "npm": "^6.13.0",
+    "npm": "^6.13.4",
     "underscore": "^1.9.1"
   },
   "devDependencies": {
